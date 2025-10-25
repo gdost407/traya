@@ -75,7 +75,7 @@ const Footer = () => {
               </ul> 
             </div> 
             <div className="col-md-5 offset-md-1 mb-3">
-              <img src="./public/1761393804595.png" alt="" srcSet="" style={{width: "50px"}} className="mb-2"/>
+              <img src="/1761393804595.png" alt="" srcSet="" style={{width: "50px"}} className="mb-2"/>
               <h5>THE LAST HEADACHE</h5>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Dolorum, natus. Nobis, veritatis.</p>
             </div> 
