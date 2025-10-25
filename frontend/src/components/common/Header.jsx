@@ -6,19 +6,19 @@ import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 
 const Header = () => {
   return (
-    <nav className="navbar navbar-expand-lg fixed-top">
+    <nav className="navbar navbar-expand-lg shadow bg-white sticky-top d-none d-sm-block">
       <div className="container">
-        <Link className="navbar-brand" href="#">
-          <img src="https://traya.health/cdn/shop/files/TrayaLogoWhite_250x_73a5d7e5-bd9b-4089-8e81-80249caeac61.webp?v=1662534292&width=200" alt="" className="w-50" />
+        <Link className="navbar-brand text-success fw-medium" href="#">
+          <img src="./public/1761393804595.png" alt="" style={{width: "50px"}} /> The Last Headache
         </Link>
         <div className="d-flex align-items-center gap-3">
-          <button type="button" className="btn btn-sm btn-light">
+          <button type="button" className="btn btn-sm btn-success">
             TAKE THE HAIR TEST <sup>TM</sup>
           </button>
-          <button type="button" className="nav-link fs-4 text-light">
+          <button type="button" className="nav-link fs-4 text-success">
             <FontAwesomeIcon icon={faWhatsapp} />
           </button>
-          <button type="button" className="nav-link fs-4 text-light">
+          <button type="button" className="nav-link fs-4 text-success">
             <FontAwesomeIcon icon={faBars} />
           </button>
         </div>

@@ -6,22 +6,27 @@ import { faDrupal, faYoutube } from "@fortawesome/free-brands-svg-icons";
 
 const HomePage = () => {
   return (
-    <div className="container-fluid p-0">
-
+    <>
       <div className="container-fluid pb-0 overflow-hidden">
-        <div className="row align-items-end bg-success">
-          <div className="col-5 mb-4 text-white">
-            <p className="small fw-bold mb-2">Doubts? Talk to a Hair Coach for Free</p>
-            <p className="small mb-2">Our slots fill up quickly</p>
-            <button className="btn btn-sm btn-light w-100 mb-2">Book A Call</button>
-            <button className="btn btn-sm btn-outline-light w-100">Chat With Us</button>
-            <br /><br />
-          </div>
-          <div className="col-7 text-end">
-            <img src="https://png.pngtree.com/png-vector/20240528/ourmid/pngtree-front-view-of-a-smiling-business-woman-png-image_12509704.png" className="img-fluid"  alt="Hair Coach" />
+        <div className="row bg-success">
+          <div className="col-12 pt-3">
+            <div className="container">
+              <div className="row align-items-end">
+                <div className="col-5 mb-4 text-white">
+                  <p className="small fw-bold mb-2">Doubts? Talk to a Hair Coach for Free</p>
+                  <p className="small mb-2">Our slots fill up quickly</p>
+                  <button className="btn btn-sm btn-light w-100 mb-2">Book A Call</button>
+                  <button className="btn btn-sm btn-outline-light w-100">Chat With Us</button>
+                  <br /><br />
+                </div>
+                <div className="col-7 text-end">
+                  <img src="https://png.pngtree.com/png-vector/20240528/ourmid/pngtree-front-view-of-a-smiling-business-woman-png-image_12509704.png" className="img-fluid"  alt="Hair Coach" />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <div className="card rounded-2 p-3 border-1" style={{marginTop:"-40px"}}>
+        <div className="container card rounded-2 p-3 border-1" style={{marginTop:"-40px"}}>
           <p className="small fw-bold mb-0">Hi Yogesh</p>
           <p className="small mb-0">Here's what your hair analysisreport says:</p>
           <p className="small fw-bold mb-4">Your Root &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span className="">-------------</span></p>
@@ -41,14 +46,11 @@ const HomePage = () => {
           </div>
         </div>
       </div>
-      
-      <div className="container py-4">
-        <h6>1 Month Customised Kit - (6 products)</h6>
-      </div>
 
       <div className="container">
+        <h6 className="py-3">1 Month Customised Kit - (6 products)</h6>
         <div className="d-flex overflow-x-auto pb-2">
-          <div className="col-md-2 col-sm-3 col-6 px-1">
+          <div className="col-md-3 col-sm-4 col-6 px-1">
             <div className="card p-1 h-100">
               <p className="m-0 fs-8px">
                 <span className="bg-secondary rounded-1 px-2 text-white"><FontAwesomeIcon icon={faDrupal} /> Dermatology</span>
@@ -83,7 +85,7 @@ const HomePage = () => {
               <p className="text-center m-0 fs-10px">More Details <FontAwesomeIcon icon={faAnglesRight} /></p>
             </div>
           </div>
-          <div className="col-md-2 col-sm-3 col-6 px-1">
+          <div className="col-md-3 col-sm-4 col-6 px-1">
             <div className="card p-1 h-100">
               <p className="m-0 fs-8px">
                 <span className="bg-secondary rounded-1 px-2 text-white"><FontAwesomeIcon icon={faDrupal} /> Dermatology</span>
@@ -122,7 +124,7 @@ const HomePage = () => {
               <p className="text-center m-0 fs-10px">More Details <FontAwesomeIcon icon={faAnglesRight} /></p>
             </div>
           </div>
-          <div className="col-md-2 col-sm-3 col-6 px-1">
+          <div className="col-md-3 col-sm-4 col-6 px-1">
             <div className="card p-1 h-100">
               <p className="m-0 fs-8px">
                 <span className="bg-secondary rounded-1 px-2 text-white"><FontAwesomeIcon icon={faDrupal} /> Dermatology</span>
@@ -164,7 +166,7 @@ const HomePage = () => {
               <p className="text-center m-0 fs-10px">More Details <FontAwesomeIcon icon={faAnglesRight} /></p>
             </div>
           </div>
-          <div className="col-md-2 col-sm-3 col-6 px-1">
+          <div className="col-md-3 col-sm-4 col-6 px-1">
             <div className="card p-1 h-100">
               <p className="m-0 fs-8px">
                 <span className="bg-secondary rounded-1 px-2 text-white"><FontAwesomeIcon icon={faDrupal} /> Dermatology</span>
@@ -203,7 +205,7 @@ const HomePage = () => {
               <p className="text-center m-0 fs-10px">More Details <FontAwesomeIcon icon={faAnglesRight} /></p>
             </div>
           </div>
-          <div className="col-md-2 col-sm-3 col-6 px-1">
+          <div className="col-md-3 col-sm-4 col-6 px-1">
             <div className="card p-1 h-100">
               <p className="m-0 fs-8px">
                 <span className="bg-secondary rounded-1 px-2 text-white"><FontAwesomeIcon icon={faDrupal} /> Dermatology</span>
@@ -249,14 +251,14 @@ const HomePage = () => {
         <h6 className="fw-bold">Your Hair Growth Journey</h6>
         <div className="card p-3">
 
-          <div className="d-flex flex-column align-items-start">
+          <div className="d-flex flex-column flex-sm-row align-items-start">
 
-            <div className="d-flex">
+            <div className="d-flex col">
               <div className="d-flex flex-column align-items-center me-3">
                 <div className="rounded-circle bg-success text-white d-flex align-items-center justify-content-center" style={{width: "30px", height: "30px"}}>
                   <FontAwesomeIcon icon={faBrain} />
                 </div>
-                <div className="flex-grow-1 border-start border-3 border-success" style={{height: "50px;"}}></div>
+                <div className="flex-grow-1 d-sm-none border-start border-3 border-success" style={{height: "50px"}}></div>
               </div>
               <div>
                 <h6 className="text-success mb-1">Month 1-3</h6>
@@ -264,12 +266,12 @@ const HomePage = () => {
               </div>
             </div>
 
-            <div className="d-flex">
+            <div className="d-flex col">
               <div className="d-flex flex-column align-items-center me-3">
                 <div className="rounded-circle bg-success text-white d-flex align-items-center justify-content-center" style={{width: "30px", height: "30px"}}>
                   <FontAwesomeIcon icon={faBrain} />
                 </div>
-                <div className="flex-grow-1 border-start border-3 border-success" style={{height: "50px;"}}></div>
+                <div className="flex-grow-1 d-sm-none border-start border-3 border-success" style={{height: "50px"}}></div>
               </div>
               <div>
                 <h6 className="text-success mb-1">Month 4-6</h6>
@@ -277,7 +279,7 @@ const HomePage = () => {
               </div>
             </div>
 
-            <div className="d-flex">
+            <div className="d-flex col">
               <div className="d-flex flex-column align-items-center me-3">
                 <div className="rounded-circle bg-success text-white d-flex align-items-center justify-content-center" style={{width: "30px", height: "30px"}}>
                   <FontAwesomeIcon icon={faBrain} />
@@ -301,19 +303,19 @@ const HomePage = () => {
           <div className="col-10">
             <div className="row">
               <div className="col-md-3 col-6 p-1">
-                <img src="https://traya.health/cdn/shop/files/2_min_desktop.webp?v=1728543479" alt="" srcset="" className="w-100 object-fit-cover rounded-1" style={{height: "100px"}}/>
+                <img src="https://traya.health/cdn/shop/files/2_min_desktop.webp?v=1728543479" alt="" srcSet="" className="w-100 object-fit-cover rounded-1" style={{height: "100px"}}/>
               </div>
               <div className="col-md-3 col-6 p-1">
-                <img src="https://traya.health/cdn/shop/files/2_min_desktop.webp?v=1728543479" alt="" srcset="" className="w-100 object-fit-cover rounded-1" style={{height: "100px"}}/>
+                <img src="https://traya.health/cdn/shop/files/2_min_desktop.webp?v=1728543479" alt="" srcSet="" className="w-100 object-fit-cover rounded-1" style={{height: "100px"}}/>
               </div>
               <div className="col-md-3 col-6 p-1">
-                <img src="https://traya.health/cdn/shop/files/2_min_desktop.webp?v=1728543479" alt="" srcset="" className="w-100 object-fit-cover rounded-1" style={{height: "100px"}}/>
+                <img src="https://traya.health/cdn/shop/files/2_min_desktop.webp?v=1728543479" alt="" srcSet="" className="w-100 object-fit-cover rounded-1" style={{height: "100px"}}/>
               </div>
               <div className="col-md-3 col-6 p-1">
-                <img src="https://traya.health/cdn/shop/files/2_min_desktop.webp?v=1728543479" alt="" srcset="" className="w-100 object-fit-cover rounded-1" style={{height: "100px"}}/>
+                <img src="https://traya.health/cdn/shop/files/2_min_desktop.webp?v=1728543479" alt="" srcSet="" className="w-100 object-fit-cover rounded-1" style={{height: "100px"}}/>
               </div>
               <div className="col-12 p-1">
-                <img src="https://traya.health/cdn/shop/files/2_min_desktop.webp?v=1728543479" alt="" srcset="" className="w-100 object-fit-cover rounded-1" style={{height: "30px"}}/>
+                <img src="https://traya.health/cdn/shop/files/2_min_desktop.webp?v=1728543479" alt="" srcSet="" className="w-100 object-fit-cover rounded-1" style={{height: "30px"}}/>
               </div>
             </div>
           </div>
@@ -481,7 +483,7 @@ const HomePage = () => {
 
       <div className="container py-4">
         <div className="card bg-success rounded-3 p-2">
-          <div className="row">
+          <div className="row align-items-center">
             <div className="col text-white ps-3">
               <p className="mb-1">
                 Not completely sure?
@@ -494,7 +496,7 @@ const HomePage = () => {
               </button>
             </div>
             <div className="col-5">
-              <img src="https://testingwing.in/wp-content/uploads/2021/09/9245938-1-1-1000x570.png" alt="" srcset="" className="w-100 h-100 object-fit-cover"/>
+              <img src="https://testingwing.in/wp-content/uploads/2021/09/9245938-1-1-1000x570.png" alt="" srcSet="" className="w-100 h-100 object-fit-cover"/>
             </div>
           </div>
         </div>
@@ -504,11 +506,11 @@ const HomePage = () => {
         <h6 className="fw-bold">Meet Our Team Of Doctors</h6>
         
         <div className="d-flex overflow-x-auto pb-2">
-          <div className="col-md-3 col-sm-4 col-7 px-1">
+          <div className="col-md-3 col-sm-4 col-7 px-2">
             <div className="card p-1 h-100">
               <div className="row align-items-center">
                 <div className="col-4">
-                  <img src="https://static.vecteezy.com/system/resources/thumbnails/026/375/249/small/ai-generative-portrait-of-confident-male-doctor-in-white-coat-and-stethoscope-standing-with-arms-crossed-and-looking-at-camera-photo.jpg" alt="Doctor" className="w-100 object-fit-cover rounded-circle" style={{aspectRatio: "1/1"}}/>
+                  <img src="https://static.vecteezy.com/system/resources/thumbnails/026/375/249/small/ai-generative-portrait-of-confident-male-doctor-in-white-coat-and-stethoscope-standing-with-arms-crossed-and-looking-at-camera-photo.jpg" alt="Doctor" className="w-100 object-fit-cover rounded-3" style={{aspectRatio: "1/1"}}/>
                 </div>
                 <div className="col-8">
                   <p className="m-0 fw-medium">Dr. Rajesh Kumar</p>
@@ -519,11 +521,11 @@ const HomePage = () => {
               </div>
             </div>
           </div>
-          <div className="col-md-3 col-sm-4 col-7 px-1">
+          <div className="col-md-3 col-sm-4 col-7 px-2">
             <div className="card p-1 h-100">
               <div className="row align-items-center">
                 <div className="col-4">
-                  <img src="https://static.vecteezy.com/system/resources/thumbnails/026/375/249/small/ai-generative-portrait-of-confident-male-doctor-in-white-coat-and-stethoscope-standing-with-arms-crossed-and-looking-at-camera-photo.jpg" alt="Doctor" className="w-100 object-fit-cover rounded-circle" style={{aspectRatio: "1/1"}}/>
+                  <img src="https://static.vecteezy.com/system/resources/thumbnails/026/375/249/small/ai-generative-portrait-of-confident-male-doctor-in-white-coat-and-stethoscope-standing-with-arms-crossed-and-looking-at-camera-photo.jpg" alt="Doctor" className="w-100 object-fit-cover rounded-3" style={{aspectRatio: "1/1"}}/>
                 </div>
                 <div className="col-8">
                   <p className="m-0 fw-medium">Dr. Rajesh Kumar</p>
@@ -534,11 +536,11 @@ const HomePage = () => {
               </div>
             </div>
           </div>
-          <div className="col-md-3 col-sm-4 col-7 px-1">
+          <div className="col-md-3 col-sm-4 col-7 px-2">
             <div className="card p-1 h-100">
               <div className="row align-items-center">
                 <div className="col-4">
-                  <img src="https://static.vecteezy.com/system/resources/thumbnails/026/375/249/small/ai-generative-portrait-of-confident-male-doctor-in-white-coat-and-stethoscope-standing-with-arms-crossed-and-looking-at-camera-photo.jpg" alt="Doctor" className="w-100 object-fit-cover rounded-circle" style={{aspectRatio: "1/1"}}/>
+                  <img src="https://static.vecteezy.com/system/resources/thumbnails/026/375/249/small/ai-generative-portrait-of-confident-male-doctor-in-white-coat-and-stethoscope-standing-with-arms-crossed-and-looking-at-camera-photo.jpg" alt="Doctor" className="w-100 object-fit-cover rounded-3" style={{aspectRatio: "1/1"}}/>
                 </div>
                 <div className="col-8">
                   <p className="m-0 fw-medium">Dr. Rajesh Kumar</p>
@@ -549,11 +551,11 @@ const HomePage = () => {
               </div>
             </div>
           </div>
-          <div className="col-md-3 col-sm-4 col-7 px-1">
+          <div className="col-md-3 col-sm-4 col-7 px-2">
             <div className="card p-1 h-100">
               <div className="row align-items-center">
                 <div className="col-4">
-                  <img src="https://static.vecteezy.com/system/resources/thumbnails/026/375/249/small/ai-generative-portrait-of-confident-male-doctor-in-white-coat-and-stethoscope-standing-with-arms-crossed-and-looking-at-camera-photo.jpg" alt="Doctor" className="w-100 object-fit-cover rounded-circle" style={{aspectRatio: "1/1"}}/>
+                  <img src="https://static.vecteezy.com/system/resources/thumbnails/026/375/249/small/ai-generative-portrait-of-confident-male-doctor-in-white-coat-and-stethoscope-standing-with-arms-crossed-and-looking-at-camera-photo.jpg" alt="Doctor" className="w-100 object-fit-cover rounded-3" style={{aspectRatio: "1/1"}}/>
                 </div>
                 <div className="col-8">
                   <p className="m-0 fw-medium">Dr. Rajesh Kumar</p>
@@ -566,39 +568,8 @@ const HomePage = () => {
           </div>
         </div>
       </div>
-      
-      <br /> <br />
-      <nav className="navbar navbar-expand-lg navbar-light bg-white fixed-bottom shadow-lg p-0">
-          <div className="container-fluid">
-              <div className="row w-100 justify-content-around text-center m-0">
-                  <div className="col p-2">
-                      <Link to="/" className="text-decoration-none text-success d-flex flex-column align-items-center">
-                          <FontAwesomeIcon icon={faHouse} />
-                          <small>Home</small>
-                      </Link>
-                  </div>
-                  <div className="col p-2">
-                      <Link to="/" className="text-decoration-none text-muted d-flex flex-column align-items-center">
-                          <FontAwesomeIcon icon={faBoxOpen} />
-                          <small>My Kit</small>
-                      </Link>
-                  </div>
-                  <div className="col p-2">
-                      <Link to="/" className="text-decoration-none text-muted d-flex flex-column align-items-center">
-                          <FontAwesomeIcon icon={faYoutube} />
-                          <small>Video</small>
-                      </Link>
-                  </div>
-                  <div className="col p-2">
-                      <Link to="/" className="text-decoration-none text-muted d-flex flex-column align-items-center">
-                          <FontAwesomeIcon icon={faCircleUser} />
-                          <small>You</small>
-                      </Link>
-                  </div>
-              </div>
-          </div>
-      </nav>
-    </div>
+
+    </>
   );
 };
 

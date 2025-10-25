@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import './App.css'
 import HomePage from "./pages/HomePage";
-// import LoginPage from "./pages/LoginPage";
+import VideoPage from "./pages/VideoPage";
 import Header from "./components/common/Header";
 import Footer from "./components/common/Footer";
 
@@ -12,12 +12,12 @@ function App() {
 
   return (
     <Router>
-      {/* <Header /> */}
+      <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        {/* <Route path="/login" element={<LoginPage />} /> */}
+        <Route path="/video" element={<VideoPage />} />
       </Routes>
-      {/* <Footer /> */}
+      <Footer />
     </Router>
   );
 }
