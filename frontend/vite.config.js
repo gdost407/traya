@@ -9,21 +9,21 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.ico', 'robots.txt', 'apple-touch-icon.png'],
       manifest: {
-        name: 'Traya Clone',
-        short_name: 'Traya',
-        description: 'Traya Web Clone',
-        theme_color: '#4f46e5',
+        name: 'The Last Headache',
+        short_name: 'TLH',
+        description: 'Vision: To eliminate chronic headaches through precision neuroscience, AI analytics, and holistic wellness. Mission: To create India’s first AI-driven, hospital-integrated, and patient-personalized system for diagnosing and curing headaches at their root cause.',
+        theme_color: '#ffffff',
         background_color: '#ffffff',
         display: 'standalone',
         start_url: '/',
         icons: [
           {
-            src: 'pwa-192x192.png',
+            src: '/1761393804595.png',
             sizes: '192x192',
             type: 'image/png'
           },
           {
-            src: 'pwa-512x512.png',
+            src: '/1761393804595.png',
             sizes: '512x512',
             type: 'image/png'
           }

@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAppleWhole, faAnglesRight } from "@fortawesome/free-solid-svg-icons";
-import { faDrupal } from "@fortawesome/free-brands-svg-icons";
+import { faAppleWhole, faAnglesRight, faBrain, fa1, fa2, fa3, faQuestion, faHouse, faBoxOpen, faCircleUser } from "@fortawesome/free-solid-svg-icons";
+import { faDrupal, faYoutube } from "@fortawesome/free-brands-svg-icons";
 
 const HomePage = () => {
   return (
@@ -47,7 +47,7 @@ const HomePage = () => {
       </div>
 
       <div className="container">
-        <div className="d-flex overflow-x-auto">
+        <div className="d-flex overflow-x-auto pb-2">
           <div className="col-md-2 col-sm-3 col-6 px-1">
             <div className="card p-1 h-100">
               <p className="m-0 fs-8px">
@@ -246,162 +246,353 @@ const HomePage = () => {
       </div>
 
       <div className="container py-4">
-          <div className="p-3 primary-green bg-opacity-10 rounded-3xl d-flex align-items-center">
-              <div className="me-3">
-                  <h5 className="fw-bold mb-1 text-primary-green">Book a FREE Consultation!</h5>
-                  <p className="small mb-2 text-primary-green">Get your personalized plan in just 1 click.</p>
-                  <button className="btn btn-green rounded-3xl fw-bold btn-sm">Chat Now <i className="fas fa-arrow-right ms-1"></i></button>
-              </div>
-              <img src="https://placehold.co/100x120/d1fae5/059669?text=Expert" className="img-fluid rounded-3xl ms-auto" alt="Consultation Expert"/>
-          </div>
-      </div>
+        <h6 className="fw-bold">Your Hair Growth Journey</h6>
+        <div className="card p-3">
 
-      <div className="container py-3">
-          <h2 className="h5 fw-bold mb-3">What You Can Expect</h2>
-          <div className="card shadow-sm border-0 rounded-3xl p-3 mb-3">
-              <div className="d-flex align-items-start mb-3">
-                  <i className="fas fa-stethoscope text-primary-green fs-4 me-3 mt-1"></i>
-                  <div>
-                      <h6 className="fw-bold mb-1">Medical Grade Solutions</h6>
-                      <p className="small text-muted mb-0">Our treatments are FDA-approved and backed by clinical research.</p>
-                  </div>
-              </div>
-              <div className="d-flex align-items-start mb-3">
-                  <i className="fas fa-calendar-check text-primary-green fs-4 me-3 mt-1"></i>
-                  <div>
-                      <h6 className="fw-bold mb-1">Personalized Treatment Plans</h6>
-                      <p className="small text-muted mb-0">Every plan is tailored to your unique hair type and needs.</p>
-                  </div>
-              </div>
-              <div className="d-flex align-items-start">
-                  <i className="fas fa-truck-fast text-primary-green fs-4 me-3 mt-1"></i>
-                  <div>
-                      <h6 className="fw-bold mb-1">Delivered to Your Doorstep</h6>
-                      <p className="small text-muted mb-0">Discreet and fast delivery across the country.</p>
-                  </div>
-              </div>
-          </div>
-      </div>
+          <div className="d-flex flex-column align-items-start">
 
-      <div className="container py-4">
-          <h2 className="h5 fw-bold mb-3">How Your Plan Works</h2>
-          <div className="row row-cols-1 row-cols-md-3 g-3">
-              <div className="col">
-                  <div className="card border-0 rounded-3xl p-3 text-center shadow-sm">
-                      <span className="badge bg-light text-secondary rounded-pill mx-auto mb-2">STEP 1</span>
-                      <img src="https://placehold.co/100x70/ffffff/555555?text=Consult" className="img-fluid mx-auto mb-2 rounded-3" alt="Step 1"/>
-                      <p className="small fw-semibold mb-0">Free Online Consultation</p>
-                  </div>
+            <div className="d-flex">
+              <div className="d-flex flex-column align-items-center me-3">
+                <div className="rounded-circle bg-success text-white d-flex align-items-center justify-content-center" style={{width: "30px", height: "30px"}}>
+                  <FontAwesomeIcon icon={faBrain} />
+                </div>
+                <div className="flex-grow-1 border-start border-3 border-success" style={{height: "50px;"}}></div>
               </div>
-              <div className="col">
-                  <div className="card border-0 rounded-3xl p-3 text-center shadow-sm">
-                      <span className="badge bg-light text-secondary rounded-pill mx-auto mb-2">STEP 2</span>
-                      <img src="https://placehold.co/100x70/ffffff/555555?text=Diagnosis" className="img-fluid mx-auto mb-2 rounded-3" alt="Step 2"/>
-                      <p className="small fw-semibold mb-0">Doctor's Diagnosis & Plan</p>
-                  </div>
-              </div>
-              <div className="col">
-                  <div className="card border-0 rounded-3xl p-3 text-center shadow-sm">
-                      <span className="badge bg-light text-secondary rounded-pill mx-auto mb-2">STEP 3</span>
-                      <img src="https://placehold.co/100x70/ffffff/555555?text=Delivery" className="img-fluid mx-auto mb-2 rounded-3" alt="Step 3"/>
-                      <p className="small fw-semibold mb-0">Product Delivery & Results</p>
-                  </div>
-              </div>
-          </div>
-      </div>
-      <div className="container py-4">
-          <h2 className="h5 fw-bold mb-3">Connect with a Hair Coach</h2>
-          <div className="d-flex overflow-auto pb-2">
-              <div className="card border-0 rounded-3xl shadow-sm p-3 text-center">
-                  <img src="https://placehold.co/80x80/e0e0e0/059669?text=Dr+A" className="rounded-circle mx-auto mb-2" alt="Dr. Sharma"/>
-                  <h6 className="fw-bold mb-0">Dr. Alok Sharma</h6>
-                  <p className="small text-muted mb-1">M.D. Dermatologist</p>
-                  <p className="small text-muted mb-0">7 Years Exp.</p>
-              </div>
-              <div className="card border-0 rounded-3xl shadow-sm p-3 text-center">
-                  <img src="https://placehold.co/80x80/e0e0e0/059669?text=Dr+J" className="rounded-circle mx-auto mb-2" alt="Dr. Jain"/>
-                  <h6 className="fw-bold mb-0">Dr. Jaya Jain</h6>
-                  <p className="small text-muted mb-1">Clinical Trichologist</p>
-                  <p className="small text-muted mb-0">5 Years Exp.</p>
-              </div>
-              <div className="card border-0 rounded-3xl shadow-sm p-3 text-center">
-                  <img src="https://placehold.co/80x80/e0e0e0/059669?text=Dr+K" className="rounded-circle mx-auto mb-2" alt="Dr. Kapoor"/>
-                  <h6 className="fw-bold mb-0">Dr. Kapil Kapoor</h6>
-                  <p className="small text-muted mb-1">M.D. Dermatologist</p>
-                  <p className="small text-muted mb-0">10 Years Exp.</p>
-              </div>
-          </div>
-      </div>
-      
-      <div className="container py-4">
-          <h2 className="h5 fw-bold mb-3">User Stories</h2>
-          <div className="d-flex overflow-auto pb-2">
-              <div className="card border-0 bg-dark text-white rounded-3xl" >
-                  <img src="https://placehold.co/180x250/333333/ffffff?text=Video+1" className="card-img rounded-3xl opacity-50" alt="Testimonial Video"/>
-                  <div className="card-img-overlay d-flex flex-column justify-content-end p-2">
-                      <i className="fas fa-play-circle text-white fs-3 mx-auto mb-2"></i>
-                      <p className="card-text small text-center mb-0">Aarav K. | 6 Months</p>
-                  </div>
-              </div>
-              <div className="card border-0 bg-dark text-white rounded-3xl" >
-                  <img src="https://placehold.co/180x250/333333/ffffff?text=Video+2" className="card-img rounded-3xl opacity-50" alt="Testimonial Video"/>
-                  <div className="card-img-overlay d-flex flex-column justify-content-end p-2">
-                      <i className="fas fa-play-circle text-white fs-3 mx-auto mb-2"></i>
-                      <p className="card-text small text-center mb-0">Priya S. | 9 Months</p>
-                  </div>
-              </div>
-              <div className="card border-0 bg-dark text-white rounded-3xl" >
-                  <img src="https://placehold.co/180x250/333333/ffffff?text=Video+3" className="card-img rounded-3xl opacity-50" alt="Testimonial Video"/>
-                  <div className="card-img-overlay d-flex flex-column justify-content-end p-2">
-                      <i className="fas fa-play-circle text-white fs-3 mx-auto mb-2"></i>
-                      <p className="card-text small text-center mb-0">Vikas L. | 4 Months</p>
-                  </div>
-              </div>
-          </div>
-      </div>
-      
-      <div className="container py-4">
-          <div className="card border-0 p-3 primary-green bg-opacity-10 rounded-3xl d-flex flex-row align-items-center justify-content-between">
               <div>
-                  <h5 className="fw-bold text-primary-green mb-1">Your Personalized Plan</h5>
-                  <h4 className="fw-bold text-primary-green mb-1">4.6 <span className="small fw-normal">Excellent Rating</span></h4>
-                  <div className="d-flex">
-                      <i className="fas fa-star rating-star"></i>
-                      <i className="fas fa-star rating-star"></i>
-                      <i className="fas fa-star rating-star"></i>
-                      <i className="fas fa-star rating-star"></i>
-                      <i className="fas fa-star-half-alt rating-star"></i>
-                  </div>
+                <h6 className="text-success mb-1">Month 1-3</h6>
+                <p className="text-dark mb-4">Controlling dandruff as it acceleration hair fall.</p>
               </div>
-              <button className="btn btn-green rounded-4xl fw-bold text-nowrap py-2 px-4">Buy Now <i className="fas fa-arrow-right ms-1"></i></button>
+            </div>
+
+            <div className="d-flex">
+              <div className="d-flex flex-column align-items-center me-3">
+                <div className="rounded-circle bg-success text-white d-flex align-items-center justify-content-center" style={{width: "30px", height: "30px"}}>
+                  <FontAwesomeIcon icon={faBrain} />
+                </div>
+                <div className="flex-grow-1 border-start border-3 border-success" style={{height: "50px;"}}></div>
+              </div>
+              <div>
+                <h6 className="text-success mb-1">Month 4-6</h6>
+                <p className="text-dark mb-4">Visible reduction in hair growth along with thicker, fuller hair.</p>
+              </div>
+            </div>
+
+            <div className="d-flex">
+              <div className="d-flex flex-column align-items-center me-3">
+                <div className="rounded-circle bg-success text-white d-flex align-items-center justify-content-center" style={{width: "30px", height: "30px"}}>
+                  <FontAwesomeIcon icon={faBrain} />
+                </div>
+              </div>
+              <div>
+                <h6 className="text-success mb-1">Month 7-8</h6>
+                <p className="text-dark">Onset of new baby hair growth along with thicker, fuller hair.</p>
+              </div>
+            </div>
+
           </div>
+
+        </div>
       </div>
 
+      <div className="container py-4">
+        <h6 className="fw-bold">Traya Plan Includes</h6>
+        <div className="row">
+          <div className="col-1"></div>
+          <div className="col-10">
+            <div className="row">
+              <div className="col-md-3 col-6 p-1">
+                <img src="https://traya.health/cdn/shop/files/2_min_desktop.webp?v=1728543479" alt="" srcset="" className="w-100 object-fit-cover rounded-1" style={{height: "100px"}}/>
+              </div>
+              <div className="col-md-3 col-6 p-1">
+                <img src="https://traya.health/cdn/shop/files/2_min_desktop.webp?v=1728543479" alt="" srcset="" className="w-100 object-fit-cover rounded-1" style={{height: "100px"}}/>
+              </div>
+              <div className="col-md-3 col-6 p-1">
+                <img src="https://traya.health/cdn/shop/files/2_min_desktop.webp?v=1728543479" alt="" srcset="" className="w-100 object-fit-cover rounded-1" style={{height: "100px"}}/>
+              </div>
+              <div className="col-md-3 col-6 p-1">
+                <img src="https://traya.health/cdn/shop/files/2_min_desktop.webp?v=1728543479" alt="" srcset="" className="w-100 object-fit-cover rounded-1" style={{height: "100px"}}/>
+              </div>
+              <div className="col-12 p-1">
+                <img src="https://traya.health/cdn/shop/files/2_min_desktop.webp?v=1728543479" alt="" srcset="" className="w-100 object-fit-cover rounded-1" style={{height: "30px"}}/>
+              </div>
+            </div>
+          </div>
+          <div className="col-2"></div>
+        </div>
+      </div>
+
+      <div className="container py-4">
+        <h6 className="fw-bold mb-4">What Happen After You Place An Order?</h6>
+
+        {/* PC view (3 cards inline) */}
+        <div className="d-none d-lg-block">
+          <div className="row g-3">
+            <div className="col-lg-4">
+              <div className="card p-3">
+                <div className="row">
+                  <div className="col-3">
+                    <FontAwesomeIcon icon={fa1} className="text-warning" style={{ fontSize: "60px" }} />
+                  </div>
+                  <div className="col pt-3">
+                    <h4>Connect with a hair Coach</h4>
+                  </div>
+                  <div className="col-12 px-4">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-4">
+              <div className="card p-3">
+                <div className="row">
+                  <div className="col-3">
+                    <FontAwesomeIcon icon={fa2} className="text-warning" style={{ fontSize: "60px" }} />
+                  </div>
+                  <div className="col pt-3">
+                    <h4>Review Your Hair Profile</h4>
+                  </div>
+                  <div className="col-12 px-4">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-4">
+              <div className="card p-3">
+                <div className="row">
+                  <div className="col-3">
+                    <FontAwesomeIcon icon={fa3} className="text-warning" style={{ fontSize: "60px" }} />
+                  </div>
+                  <div className="col pt-3">
+                    <h4>Start Your Journey</h4>
+                  </div>
+                  <div className="col-12 px-4">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Mobile view (carousel) */}
+        <div id="carouselExampleAutoplaying" className="carousel slide d-lg-none" data-bs-ride="carousel">
+          <div className="carousel-inner">
+            <div className="carousel-item active">
+              <div className="card p-3">
+                <div className="row">
+                  <div className="col-3">
+                    <FontAwesomeIcon icon={fa1} className="text-warning" style={{ fontSize: "60px" }} />
+                  </div>
+                  <div className="col pt-3">
+                    <h4>Connect with a hair Coach</h4>
+                  </div>
+                  <div className="col-12 px-4">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="carousel-item">
+              <div className="card p-3">
+                <div className="row">
+                  <div className="col-3">
+                    <FontAwesomeIcon icon={fa2} className="text-warning" style={{ fontSize: "60px" }} />
+                  </div>
+                  <div className="col pt-3">
+                    <h4>Review Your Hair Profile</h4>
+                  </div>
+                  <div className="col-12 px-4">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="carousel-item">
+              <div className="card p-3">
+                <div className="row">
+                  <div className="col-3">
+                    <FontAwesomeIcon icon={fa3} className="text-warning" style={{ fontSize: "60px" }} />
+                  </div>
+                  <div className="col pt-3">
+                    <h4>Start Your Journey</h4>
+                  </div>
+                  <div className="col-12 px-4">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span className="visually-hidden">Previous</span>
+          </button>
+          <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+            <span className="carousel-control-next-icon" aria-hidden="true"></span>
+            <span className="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+
+      <div className="container py-4">
+        <h6 className="fw-bold">Need Help?</h6>
+        <div className="d-flex overflow-x-auto pb-2">
+          <div className="col-md-2 col-sm-3 col-7 px-1">
+            <div className="card p-2 h-100 bg-warning">
+              <p className="m-0">
+                <FontAwesomeIcon icon={faQuestion} /> General Queries
+              </p>
+            </div>
+          </div>
+          <div className="col-md-2 col-sm-3 col-7 px-1">
+            <div className="card p-2 h-100 bg-warning">
+              <p className="m-0">
+                <FontAwesomeIcon icon={faQuestion} /> Hair test
+              </p>
+            </div>
+          </div>
+          <div className="col-md-2 col-sm-3 col-7 px-1">
+            <div className="card p-2 h-100 bg-warning">
+              <p className="m-0">
+                <FontAwesomeIcon icon={faQuestion} /> Hair Coach
+              </p>
+            </div>
+          </div>
+          <div className="col-md-2 col-sm-3 col-7 px-1">
+            <div className="card p-2 h-100 bg-warning">
+              <p className="m-0">
+                <FontAwesomeIcon icon={faQuestion} /> Diet Plan
+              </p>
+            </div>
+          </div>
+          <div className="col-md-2 col-sm-3 col-7 px-1">
+            <div className="card p-2 h-100 bg-warning">
+              <p className="m-0">
+                <FontAwesomeIcon icon={faQuestion} /> Payments & Refunds
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="container py-4">
+        <div className="card bg-success rounded-3 p-2">
+          <div className="row">
+            <div className="col text-white ps-3">
+              <p className="mb-1">
+                Not completely sure?
+              </p>
+              <p className="fs-10px">
+                if you've left something or want to update a response on the hair test, simply re-take it.
+              </p>
+              <button type="button" className="btn btn-sm btn-warning">
+                Take The Hair Test Again
+              </button>
+            </div>
+            <div className="col-5">
+              <img src="https://testingwing.in/wp-content/uploads/2021/09/9245938-1-1-1000x570.png" alt="" srcset="" className="w-100 h-100 object-fit-cover"/>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="container py-4">
+        <h6 className="fw-bold">Meet Our Team Of Doctors</h6>
+        
+        <div className="d-flex overflow-x-auto pb-2">
+          <div className="col-md-3 col-sm-4 col-7 px-1">
+            <div className="card p-1 h-100">
+              <div className="row align-items-center">
+                <div className="col-4">
+                  <img src="https://static.vecteezy.com/system/resources/thumbnails/026/375/249/small/ai-generative-portrait-of-confident-male-doctor-in-white-coat-and-stethoscope-standing-with-arms-crossed-and-looking-at-camera-photo.jpg" alt="Doctor" className="w-100 object-fit-cover rounded-circle" style={{aspectRatio: "1/1"}}/>
+                </div>
+                <div className="col-8">
+                  <p className="m-0 fw-medium">Dr. Rajesh Kumar</p>
+                  <p className="small m-0">Dermatologist</p>
+                  <hr className="text-success my-1" />
+                  <p className="small m-0 fw-medium">Experience : 15 Years</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-3 col-sm-4 col-7 px-1">
+            <div className="card p-1 h-100">
+              <div className="row align-items-center">
+                <div className="col-4">
+                  <img src="https://static.vecteezy.com/system/resources/thumbnails/026/375/249/small/ai-generative-portrait-of-confident-male-doctor-in-white-coat-and-stethoscope-standing-with-arms-crossed-and-looking-at-camera-photo.jpg" alt="Doctor" className="w-100 object-fit-cover rounded-circle" style={{aspectRatio: "1/1"}}/>
+                </div>
+                <div className="col-8">
+                  <p className="m-0 fw-medium">Dr. Rajesh Kumar</p>
+                  <p className="small m-0">Dermatologist</p>
+                  <hr className="text-success my-1" />
+                  <p className="small m-0 fw-medium">Experience : 15 Years</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-3 col-sm-4 col-7 px-1">
+            <div className="card p-1 h-100">
+              <div className="row align-items-center">
+                <div className="col-4">
+                  <img src="https://static.vecteezy.com/system/resources/thumbnails/026/375/249/small/ai-generative-portrait-of-confident-male-doctor-in-white-coat-and-stethoscope-standing-with-arms-crossed-and-looking-at-camera-photo.jpg" alt="Doctor" className="w-100 object-fit-cover rounded-circle" style={{aspectRatio: "1/1"}}/>
+                </div>
+                <div className="col-8">
+                  <p className="m-0 fw-medium">Dr. Rajesh Kumar</p>
+                  <p className="small m-0">Dermatologist</p>
+                  <hr className="text-success my-1" />
+                  <p className="small m-0 fw-medium">Experience : 15 Years</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-3 col-sm-4 col-7 px-1">
+            <div className="card p-1 h-100">
+              <div className="row align-items-center">
+                <div className="col-4">
+                  <img src="https://static.vecteezy.com/system/resources/thumbnails/026/375/249/small/ai-generative-portrait-of-confident-male-doctor-in-white-coat-and-stethoscope-standing-with-arms-crossed-and-looking-at-camera-photo.jpg" alt="Doctor" className="w-100 object-fit-cover rounded-circle" style={{aspectRatio: "1/1"}}/>
+                </div>
+                <div className="col-8">
+                  <p className="m-0 fw-medium">Dr. Rajesh Kumar</p>
+                  <p className="small m-0">Dermatologist</p>
+                  <hr className="text-success my-1" />
+                  <p className="small m-0 fw-medium">Experience : 15 Years</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <br /> <br />
       <nav className="navbar navbar-expand-lg navbar-light bg-white fixed-bottom shadow-lg p-0">
           <div className="container-fluid">
               <div className="row w-100 justify-content-around text-center m-0">
                   <div className="col p-2">
-                      <Link to="/" className="text-decoration-none text-primary-green d-flex flex-column align-items-center">
-                          <i className="fas fa-home fs-5"></i>
+                      <Link to="/" className="text-decoration-none text-success d-flex flex-column align-items-center">
+                          <FontAwesomeIcon icon={faHouse} />
                           <small>Home</small>
                       </Link>
                   </div>
                   <div className="col p-2">
                       <Link to="/" className="text-decoration-none text-muted d-flex flex-column align-items-center">
-                          <i className="fas fa-gift fs-5"></i>
-                          <small>Rewards</small>
+                          <FontAwesomeIcon icon={faBoxOpen} />
+                          <small>My Kit</small>
                       </Link>
                   </div>
                   <div className="col p-2">
                       <Link to="/" className="text-decoration-none text-muted d-flex flex-column align-items-center">
-                          <i className="fas fa-shopping-bag fs-5"></i>
-                          <small>Shop</small>
+                          <FontAwesomeIcon icon={faYoutube} />
+                          <small>Video</small>
                       </Link>
                   </div>
                   <div className="col p-2">
                       <Link to="/" className="text-decoration-none text-muted d-flex flex-column align-items-center">
-                          <i className="fas fa-user-circle fs-5"></i>
-                          <small>Profile</small>
+                          <FontAwesomeIcon icon={faCircleUser} />
+                          <small>You</small>
                       </Link>
                   </div>
               </div>
