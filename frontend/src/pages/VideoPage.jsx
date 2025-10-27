@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAppleWhole, faAnglesRight, faBrain, fa1, fa2, fa3, faQuestion, faHouse, faBoxOpen, faCircleUser } from "@fortawesome/free-solid-svg-icons";
 import { faDrupal, faYoutube } from "@fortawesome/free-brands-svg-icons";
 
-const HomePage = () => {
+const VideoPage = () => {
   return (
     <>
     
@@ -89,4 +89,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default VideoPage;

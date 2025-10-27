@@ -1,12 +1,13 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { React, useEffect, useState } from "react";
+import toast from "react-hot-toast";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { setupRecaptcha, signInWithPhoneNumber, auth } from "../firebase";
-import { useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPhoneAlt } from "@fortawesome/free-solid-svg-icons";
 
-const Onboarding = () => {
+const OnboardPhone = () => {
   const [phone, setPhone] = useState("");
-  const navigate = useNavigate();
 
   const sendOTP = async (e) => {
     e.preventDefault();
@@ -18,13 +19,20 @@ const Onboarding = () => {
 
     try {
       // ✅ Use imported `auth` (not window.*)
-      const confirmationResult = await signInWithPhoneNumber(auth, fullPhone, appVerifier);
+      const confirmationResult = await signInWithPhoneNumber(
+        auth,
+        fullPhone,
+        appVerifier
+      );
       window.confirmationResult = confirmationResult;
 
       // Check with backend if user exists
-      const res = await axios.get(`${import.meta.env.VITE_API_BASE}/check-user`, {
-        params: { phone: fullPhone },
-      });
+      const res = await axios.get(
+        `${import.meta.env.VITE_API_BASE}/check-user`,
+        {
+          params: { phone: fullPhone },
+        }
+      );
 
       const exists = res.data.exists;
       localStorage.setItem("auth_phone", fullPhone);
@@ -41,43 +49,83 @@ const Onboarding = () => {
     }
   };
 
+  const [leftHeight, setLeftHeight] = useState("100vh");
+  const [isMobile, setIsMobile] = useState(false);
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const checkMobile = () => window.innerWidth < 576; // bootstrap 'sm' breakpoint
+    setIsMobile(checkMobile());
+
+    // if mobile, animate from 100vh -> 50vh
+    if (checkMobile()) {
+      // leave at 100vh briefly so user sees the initial state, then shrink
+      const t = setTimeout(() => setLeftHeight("50vh"), 1000);
+      return () => clearTimeout(t);
+    } else {
+      // on larger screens keep full height (you can adjust if needed)
+      setLeftHeight("100vh");
+    }
+  }, []);
+
+  const handleOtpSend = () => {
+    // TODO: send otp
+    if (!phoneNumber) {
+      toast.success("Please enter phone number!");
+      return;
+    }
+    navigate("/setup1", { state: { phoneNumber } });
+  };
+
   return (
-    // <div className="min-h-screen flex items-center justify-center p-4">
-    //   <div className="w-full max-w-md bg-white p-6 rounded shadow">
-    //     <h2 className="text-xl font-semibold mb-4">Login / Signup - Enter Mobile</h2>
-    //     <form onSubmit={sendOTP} className="space-y-3">
-    //       <div>
-    //         <label className="block text-sm">Mobile (India - without +91)</label>
-    //         <input
-    //           type="tel"
-    //           value={phone}
-    //           onChange={(e) => setPhone(e.target.value.replace(/\D/g, ""))}
-    //           className="w-full border rounded px-3 py-2"
-    //           placeholder="e.g. 9876543210"
-    //           required
-    //         />
-    //       </div>
-
-    //       <div id="recaptcha-container" />
-    //       {/* <button className="w-full bg-blue-600 text-white py-2 rounded">Send OTP</button> */}
-    //       <Link to="/profile" className="w-full bg-success text-white py-2 rounded">Send OTP</Link>
-    //     </form>
-    //   </div>
-    // </div>
-    <div className="container-fluid">
-      <div className="row">
-        <div className="col-3 bg-success min-vh-100 d-none d-sm-block">
-
-        </div>
-        <div className="col bg-light min-vh-100 p-4">
-          <h4 className="text-success mt-3">
-            <img src="/1761393804595.png" alt="" style={{width: "50px"}} />
-            The Last Headache.
-          </h4>
+    <div className="container-fluid min-vh-100 position-relative overflow-hidden pt-2">
+      <div className="position-absolute bg-danger rounded-circle" style={{width: '220px', height: '220px', top: '-55px', left: '-100px', opacity: 0.6}}></div>
+      <div className="position-absolute bg-danger rounded-circle" style={{width: '220px', height: '220px', bottom: '-100px', right: '-100px', opacity: 0.6}}></div>
+      <div className="card p-2 position-relative">
+        <h5>
+          <img
+            src="/1761393804595.png"
+            alt="logo"
+            style={{ width: "50px", aspectRatio: "1", objectFit: "cover" }}
+          />
+          The Last Headache
+        </h5>
+        <div className="progress position-absolute bottom-0 start-0 end-0" role="progressbar"  aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style={{height: "3px"}}>
+          <div className="progress-bar bg-success" style={{width: "25%"}}></div>
         </div>
       </div>
+
+      <div className="d-flex align-item-center" style={{height: "calc(100vh - 100px)"}}>
+        <div className="m-auto" style={{maxWidth: "550px", width: "100%"}}>
+          <div className="card p-2 mb-2">
+            <div className="row">
+              <div className="col-sm-2 col-2">
+                <img
+                  src="/1761393804595.png"
+                  alt="logo"
+                  style={{ width: "50px", aspectRatio: "1", objectFit: "cover" }}
+                />
+              </div>
+              <div className="col">
+                <h6 className="fw-medium">You are on right path to healthier you.</h6>
+                <p className="small mb-0">Login with Secure OTP Authentication</p>
+              </div>
+            </div>
+          </div>
+          <div className="card p-2 mb-2">
+            <h6 className="fw-medium">Enter your phone number.</h6>
+            <input type="tel" name="" id="" className="form-control mb-3" />
+
+            <p className="text-end">
+              <button className="btn btn-primary" onClick={handleOtpSend}>Send OTP</button>
+            </p>
+          </div>
+        </div>
+      </div>
+
     </div>
   );
 };
 
-export default Onboarding;
+export default OnboardPhone;
