@@ -2,12 +2,15 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { auth, requestFcmToken } from "../firebase";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const OnboardOtpVerify = () => {
   const [otp, setOtp] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const { phoneNumber, profile } = location.state || {};
 
   const verify = async (e) => {
     e.preventDefault();
@@ -56,22 +59,51 @@ const OnboardOtpVerify = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4">
-      <div className="w-full max-w-md bg-white p-6 rounded shadow">
-        <h2 className="text-xl font-semibold mb-4">Enter OTP</h2>
-        <form onSubmit={verify} className="space-y-3">
-          <input
-            value={otp}
-            onChange={(e) => setOtp(e.target.value.replace(/\D/g, ""))}
-            placeholder="6-digit OTP"
-            className="w-full border rounded px-3 py-2"
-            required
+    <div className="container-fluid min-vh-100 position-relative overflow-hidden pt-2">
+      <div className="position-absolute bg-danger rounded-circle" style={{width: '220px', height: '220px', top: '-55px', left: '-100px', opacity: 0.6}}></div>
+      <div className="position-absolute bg-danger rounded-circle" style={{width: '220px', height: '220px', bottom: '-100px', right: '-100px', opacity: 0.6}}></div>
+      <div className="card p-2 position-relative">
+        <h5>
+          <img
+            src="https://cdn.pixabay.com/photo/2017/03/16/21/18/logo-2150297_1280.png"
+            alt="logo"
+            style={{ width: "50px", aspectRatio: "1", objectFit: "cover" }}
           />
-          <button className="w-full bg-indigo-600 text-white py-2 rounded" disabled={loading}>
-            {loading ? "Verifying..." : "Verify OTP"}
-          </button>
-        </form>
+          TRAYA
+        </h5>
+        <div className="progress position-absolute bottom-0 start-0 end-0" role="progressbar"  aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style={{height: "3px"}}>
+          <div className="progress-bar bg-success" style={{width: "95%"}}></div>
+        </div>
       </div>
+
+      <div className="d-flex align-item-center" style={{height: "calc(100vh - 100px)"}}>
+        <div className="m-auto" style={{maxWidth: "550px", width: "100%"}}>
+          <div className="card p-2 mb-2">
+            <div className="row">
+              <div className="col-sm-2 col-2">
+                <img
+                  src="https://cdn.pixabay.com/photo/2017/03/16/21/18/logo-2150297_1280.png"
+                  alt="logo"
+                  style={{ width: "50px", aspectRatio: "1", objectFit: "cover" }}
+                />
+              </div>
+              <div className="col">
+                <h6 className="fw-medium">You are on right path to healthier you.</h6>
+                <p className="small mb-0">Login with Secure OTP Authentication</p>
+              </div>
+            </div>
+          </div>
+          <div className="card p-2 mb-2">
+            <h6 className="fw-medium">Verify OTP.</h6>
+            <input type="tel" name="phone_number" value={otp} onChange={(e) => setOtp(e.target.value.replace(/\D/g, ""))} id="" className="form-control mb-3" />
+
+            <p className="text-end">
+              <button className="btn btn-primary" onClick={verify}>Send OTP</button>
+            </p>
+          </div>
+        </div>
+      </div>
+
     </div>
   );
 };
