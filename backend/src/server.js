@@ -3,7 +3,7 @@ import path from "path";
 import cors from "cors";
 import dotenv from "dotenv";
 import { connectDB } from "./config/db.js";
-import authRoutes from "./routes/authRoutes.js";
+import indexRoutes from "./routes/index.js";
 
 import { fileURLToPath } from "url";
 
@@ -23,7 +23,11 @@ app.use(express.urlencoded({ extended: true }));
 connectDB();
 
 // API Routes
-app.use("/api", authRoutes);
+app.get("/", (req, res) => {
+  res.json({ status: "ok", message: "Server is running ✅"+PORT });
+});
+
+app.use("/api", indexRoutes);
 
 // --- Frontend Serving Logic ---
 if (NODE_ENV === "production") {
