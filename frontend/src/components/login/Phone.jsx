@@ -1,75 +1,48 @@
-import { React, useEffect, useState } from "react";
-import toast from "react-hot-toast";
-import { Link, useNavigate } from "react-router-dom";
-import axios from "axios";
+import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 
-const OnboardPhone = () => {
-  const [animateClass, setAnimateClass] = useState("animate__slideInUp");
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [isSending, setIsSending] = useState(false);
-  const navigate = useNavigate();
+const Phone = ({ onSubmit, onBack, showHeader }) => {
+  const [phone, setPhone] = useState("");
 
-
-  const handleOtpSend = async () => {
-    if (!phoneNumber) {
-      toast.error("Please enter phone number!");
-      return;
-    }
-
-    if (isSending) return; // avoid duplicate sends
-
-    try {
-      setIsSending(true);
-
-      const res = await axios.post(import.meta.env.VITE_API_BASE + "/api/auth/Twilio/send-otp", { contact_no: phoneNumber });
-      if (res.data?.status) {
-        const sid = res.data.sid;
-
-        toast.success("OTP sent successfully");
-        setAnimateClass("animate__slideOutLeft");
-        setTimeout(() => {
-          navigate("/onboard-details", { state: { phoneNumber: phoneNumber } });
-        }, 600);
-      } else {
-        toast.error(res.data?.message || "Failed to send OTP");
-      }
-    } catch (err) {
-      console.error(err);
-      toast.error(err.response?.data?.message || err.message || "Network error");
-    } finally {
-      setIsSending(false);
-    }
-  };
+  function handleSubmit(e) {
+    e.preventDefault();
+    if (phone) onSubmit(phone);
+  }
 
   return (
-    <div className={`m-auto animate__animated ${animateClass}`} style={{ maxWidth: "550px", width: "100%" }}>
-      <div className="card p-2 mb-2">
-        <div className="row">
-          <div className="col-sm-2 col-2">
-            <img
-              src="https://cdn.pixabay.com/photo/2017/03/16/21/18/logo-2150297_1280.png"
-              alt="logo"
-              style={{ width: "50px", aspectRatio: "1", objectFit: "cover" }}
-            />
-          </div>
-          <div className="col">
-            <h6 className="fw-medium">You are on right path to healthier you.</h6>
-            <p className="small mb-0">Login with Secure OTP Authentication</p>
-          </div>
+    <div className="card rounded-0 shadow text-center py-5 px-4 min-vh-100 position-relative">
+      <div className="card-header border-0 bg-white">
+        <h2 className="mb-4 fs-6 p-2 fw-medium text-center">
+          <FontAwesomeIcon icon={faChevronLeft} onClick={onBack} className="float-start"/>
+          Create Account
+        </h2>
+      </div>
+      <form className="card-body text-center" onSubmit={handleSubmit}>
+        <div className="mb-4">
+          <picture>
+            <img src="https://www.shutterstock.com/image-vector/happy-man-dials-phone-number-260nw-2016856508.jpg" alt="" style={{width: "10rem", aspectRatio: "1", objectFit: "contain"}}/>
+          </picture>
+          <span className="d-inline-block bg-light rounded p-4 text-success" style={{ fontSize: 48 }}><i className="bi bi-telephone"></i></span>
         </div>
-      </div>
-      <div className="card p-2 mb-2">
-        <h6 className="fw-medium">Enter your phone number.</h6>
-        <input type="tel" name="phone_number" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} id="" className="form-control mb-3" placeholder="9876543210" />
-
-        <p className="text-end">
-          <button className="btn btn-primary" onClick={handleOtpSend} disabled={isSending}>
-            {isSending ? "Sending..." : "Send OTP"}
-          </button>
-        </p>
-      </div>
+        <div className="fw-semibold mb-3">Enter Your Phone Number</div>
+        <div className="input-group mb-3 justify-content-center" style={{maxWidth: 320, margin: "0 auto"}}>
+          <span className="input-group-text">🇮🇳 +91</span>
+          <input
+            className="form-control"
+            type="tel"
+            placeholder="618707630"
+            value={phone}
+            onChange={e => setPhone(e.target.value)}
+          />
+        </div>
+        <div className="mb-3 text-secondary small">Terms And Conditions</div>
+        <button className="btn btn-success fw-semibold w-50 m-auto py-2 position-absolute" style={{bottom: "20px", left: "20px", right: "20px"}} type="submit">
+          Send OTP
+        </button>
+      </form>
     </div>
   );
 };
 
-export default OnboardPhone;
+export default Phone;
