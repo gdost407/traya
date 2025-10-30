@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import HomePage from '../pages/HomePage'
 import VideoPage from '../pages/VideoPage'
 import LoginPage from '../pages/LoginPage'
+import AssignmentPage from '../pages/AssignmentPage'
 
 function AppRoutes() {
 
@@ -12,6 +13,7 @@ function AppRoutes() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<LoginPage />} />
+        <Route path="/assignment" element={<AssignmentPage />} />
         <Route path="/dashboard" element={<HomePage />} />
         <Route path="/video" element={<VideoPage />} />
       </Routes>

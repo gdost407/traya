@@ -27,7 +27,7 @@ const Verify = ({ phone, onBack, showHeader }) => {
   function handleVerify(e) {
     e.preventDefault();
     // Add actual verification logic if needed
-    navigate("/dashboard");
+    navigate("/assignment");
   }
 
   return (
