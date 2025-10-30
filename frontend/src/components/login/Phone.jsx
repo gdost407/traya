@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import toast from "react-hot-toast";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 
@@ -7,7 +8,13 @@ const Phone = ({ onSubmit, onBack, showHeader }) => {
 
   function handleSubmit(e) {
     e.preventDefault();
-    if (phone) onSubmit(phone);
+
+    if (!phone || phone.length < 10) {
+      toast.error("Please enter a valid 10-digit phone number!");
+      return;
+    }
+
+    onSubmit(phone);
   }
 
   return (
@@ -21,22 +28,26 @@ const Phone = ({ onSubmit, onBack, showHeader }) => {
       <form className="card-body text-center" onSubmit={handleSubmit}>
         <div className="mb-4">
           <picture>
-            <img src="https://www.shutterstock.com/image-vector/happy-man-dials-phone-number-260nw-2016856508.jpg" alt="" style={{width: "10rem", aspectRatio: "1", objectFit: "contain"}}/>
+            <img src="https://img.freepik.com/free-photo/3d-render-secure-login-password-illustration_107791-16640.jpg" alt="" style={{height: "30vh", aspectRatio: "1", objectFit: "contain"}}/>
           </picture>
-          <span className="d-inline-block bg-light rounded p-4 text-success" style={{ fontSize: 48 }}><i className="bi bi-telephone"></i></span>
         </div>
         <div className="fw-semibold mb-3">Enter Your Phone Number</div>
-        <div className="input-group mb-3 justify-content-center" style={{maxWidth: 320, margin: "0 auto"}}>
-          <span className="input-group-text">🇮🇳 +91</span>
+        <div className="input-group input-group-lg mb-3 justify-content-center" style={{maxWidth: 500, margin: "0 auto"}}>
+          <select name="" id="" className="form-control w-auto" style={{maxWidth: "100px"}}>
+            <option value="+91">🇮🇳 +91</option>
+          </select>
           <input
             className="form-control"
             type="tel"
-            placeholder="618707630"
+            placeholder="9876543210"
             value={phone}
-            onChange={e => setPhone(e.target.value)}
+            onChange={(e) => setPhone(e.target.value.replace(/\D/g, '').slice(0, 10))}
+            required
+            title="Please enter a valid 10-digit phone number."
+            style={{letterSpacing: "5px"}}
           />
         </div>
-        <div className="mb-3 text-secondary small">Terms And Conditions</div>
+        <div className="mb-3 text-secondary small pt-5">By proceeding, you agree to verify your mobile number through OTP <br /> and accept our <a href="" className="text-decoration-none text-dark fw-medium">Privacy Policy</a> and <a href="" className="text-decoration-none text-dark fw-medium">Terms of Service</a>.</div>
         <button className="btn btn-success fw-semibold w-50 m-auto py-2 position-absolute" style={{bottom: "20px", left: "20px", right: "20px"}} type="submit">
           Send OTP
         </button>

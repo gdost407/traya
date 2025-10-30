@@ -1,16 +1,34 @@
 import React, { useState } from "react";
+import toast from "react-hot-toast";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
+import { faChevronLeft, faMars, faMarsAndVenus, faUser, faVenus } from "@fortawesome/free-solid-svg-icons";
 
 const Profile = ({ phone, onSubmit, onBack, showHeader }) => {
   const [name, setName] = useState("");
-  const [age, setAge] = useState("");
+  const [age, setAge] = useState("18");
   const [gender, setGender] = useState("");
 
   function handleSubmit(e) {
     e.preventDefault();
-    if (name && age && gender) onSubmit();
+
+    if (!name || name.trim() === "") {
+      toast.error("Please enter your name!");
+      return;
+    }
+
+    if (!age || isNaN(age) || age <= 0) {
+      toast.error("Please enter a valid age!");
+      return;
+    }
+
+    if (!gender) {
+      toast.error("Please select your gender!");
+      return;
+    }
+
+    onSubmit();
   }
+
 
   return (
     <div className="card rounded-0 shadow text-center py-5 px-4 min-vh-100 position-relative">
@@ -21,33 +39,62 @@ const Profile = ({ phone, onSubmit, onBack, showHeader }) => {
         </h2>
       </div>
       <form className="card-body text-center" onSubmit={handleSubmit}>
-        <div className="fw-semibold mb-3">Enter Profile Details</div>
-        <div className="mb-3">
-          <input
-            className="form-control mb-2"
-            placeholder="Full Name"
-            value={name}
-            onChange={e => setName(e.target.value)}
-          />
-          <input
-            type="number"
-            className="form-control mb-2"
-            placeholder="Age"
-            value={age}
-            onChange={e => setAge(e.target.value)}
-          />
-          <select
-            className="form-select"
-            value={gender}
-            onChange={e => setGender(e.target.value)}
-          >
-            <option value="">Select Gender</option>
-            <option>Male</option>
-            <option>Female</option>
-            <option>Other</option>
-          </select>
+        <div className="mb-4">
+          <picture>
+            <img src="https://img.freepik.com/premium-photo/web-user-3d-icon-isolated-white-background_1108860-1344.jpg" alt="" style={{height: "30vh", aspectRatio: "1", objectFit: "contain"}}/>
+          </picture>
         </div>
-        <button className="btn btn-success fw-semibold w-100 py-2 position-absolute" style={{bottom: "20px", left: "20px", right: "20px"}} type="submit">
+        <div className="fw-semibold mb-3">Enter Profile Details</div>
+        <div className="mb-3" style={{maxWidth: 500, margin: "0 auto"}}>
+          <div className="position-relative mb-4">  
+            <input
+              className="form-control p-2 mb-2 ps-5"
+              placeholder="Full Name"
+              value={name}
+              onChange={e => setName(e.target.value)}
+              required
+              title="Full name is required"
+            />
+            <FontAwesomeIcon icon={faUser} className="position-absolute" style={{top: "12px", left: "15px"}} />
+          </div>
+
+          <div className="row mb-4">
+            {/* Male */}
+            <div className="col">
+              <label htmlFor="genderMale" className={`card p-2 text-center ${gender === "Male" ? "border-primary bg-light" : ""}`} onClick={() => setGender("Male")} style={{ cursor: "pointer" }} >
+                <input type="radio" name="gender" id="genderMale" value="Male" checked={gender === "Male"} onChange={() => setGender("Male")} className="d-none" />
+                <span><FontAwesomeIcon icon={faMars} className="me-1" /> Male</span>
+              </label>
+            </div>
+
+            {/* Female */}
+            <div className="col">
+              <label htmlFor="genderFemale" className={`card p-2 text-center ${gender === "Female" ? "border-primary bg-light" : ""}`} onClick={() => setGender("Female")} style={{ cursor: "pointer" }} >
+                <input type="radio" name="gender" id="genderFemale" value="Female" checked={gender === "Female"} onChange={() => setGender("Female")} className="d-none" />
+                <span><FontAwesomeIcon icon={faVenus} className="me-1" /> Female</span>
+              </label>
+            </div>
+
+            {/* Other */}
+            <div className="col">
+              <label htmlFor="genderOther" className={`card p-2 text-center ${gender === "Other" ? "border-primary bg-light" : ""}`} onClick={() => setGender("Other")} style={{ cursor: "pointer" }} >
+                <input type="radio" name="gender" id="genderOther" value="Other" checked={gender === "Other"} onChange={() => setGender("Other")} className="d-none" />
+                <span><FontAwesomeIcon icon={faMarsAndVenus} className="me-1" /> Other</span>
+              </label>
+            </div>
+          </div>
+
+          <div className="row">
+            <div className="col-md-2 col-3">
+              <h6 className="fw-medium">Age : {age}</h6>
+            </div>
+            <div className="col">
+              <input type="range" className="form-range mb-3" min="5" max="99" step="1" value={age} onChange={(e) => setAge(e.target.value)} id="range4"/>
+            </div>
+          </div>
+          
+        </div>
+        <button className="btn btn-success fw-semibold w-50 m-auto py-2 position-absolute" style={{bottom: "20px", left: "20px", right: "20px"}} type="submit">
           Save Details
         </button>
       </form>

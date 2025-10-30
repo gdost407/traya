@@ -1,8 +1,11 @@
 import React, { useRef, useState } from "react";
+import toast from "react-hot-toast";
+import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 
 const Verify = ({ phone, onBack, showHeader }) => {
+  const navigate = useNavigate();
   const codeLen = 6;
   const [values, setValues] = useState(Array(codeLen).fill(""));
   const inputRefs = useRef([]);
@@ -24,6 +27,7 @@ const Verify = ({ phone, onBack, showHeader }) => {
   function handleVerify(e) {
     e.preventDefault();
     // Add actual verification logic if needed
+    navigate("/dashboard");
   }
 
   return (
@@ -36,9 +40,9 @@ const Verify = ({ phone, onBack, showHeader }) => {
       </div>
       <form className="card-body text-center" onSubmit={handleVerify}>
         <div className="mb-4">
-          <span className="d-inline-block bg-light rounded p-4 text-success" style={{ fontSize: 48 }}>
-            <i className="bi bi-lock"></i>
-          </span>
+          <picture>
+            <img src="https://img.freepik.com/free-photo/3d-hand-hold-smartphone-with-authentication-form_107791-16570.jpg" alt="" style={{height: "30vh", aspectRatio: "1", objectFit: "contain"}}/>
+          </picture>
         </div>
         <div className="fw-semibold mb-2">Enter The Verification Code Sent To</div>
         <div className="mb-3 text-secondary">{phone}</div>
@@ -46,7 +50,7 @@ const Verify = ({ phone, onBack, showHeader }) => {
           {Array(codeLen).fill(0).map((_, idx) => (
             <input
               key={idx}
-              type="text"
+              type="tel"
               maxLength="1"
               className="form-control text-center fs-3"
               style={{ width: "48px", height: "60px" }}
@@ -60,7 +64,7 @@ const Verify = ({ phone, onBack, showHeader }) => {
         <div className="mb-3 text-secondary small">
           Didn't Receive the Code? <a href="#" className="fw-bold text-dark text-decoration-none">Resend</a>
         </div>
-        <button className="btn btn-success fw-semibold w-100 py-2 position-absolute" style={{bottom: "20px", left: "20px", right: "20px"}} type="submit">
+        <button className="btn btn-success fw-semibold w-50 m-auto py-2 position-absolute" style={{bottom: "20px", left: "20px", right: "20px"}} type="submit">
           Verify
         </button>
       </form>

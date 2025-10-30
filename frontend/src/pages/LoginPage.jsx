@@ -46,7 +46,7 @@ const LoginPage = () => {
               <WelcomeScreen onStart={() => setScreen(2)} />
             </div>
             <div className="col-md-8 p-0">
-              {screen === 2 &&
+              {screen === 1 &&
                 <Phone
                   onSubmit={(phone) => { setPhoneNumber(phone); setScreen(21); }}
                   showHeader
@@ -77,14 +77,19 @@ const LoginPage = () => {
 
 function WelcomeScreen({ onStart }) {
   return (
-    <div className="card rounded-0 shadow text-white text-center py-5 px-4 min-vh-100 position-relative" style={{background: "linear-gradient(220deg, #272fa9, #48573c, #461354)"}}>
+    <div className="card rounded-0 shadow text-white text-center py-5 px-4 h-100 min-vh-100 position-relative" style={{background: "linear-gradient(220deg, #272fa9, #48573c, #461354)"}}>
       <div>
         <h1 className="mb-3" style={{ fontWeight: 700, fontSize: "2.2rem" }}>
           <span className="text-warning">Head Issue</span> Track your Health!
         </h1>
         <p className="mb-4">your gateway to extraordinary quests around the globe</p>
-        <div style={{fontSize:200, margin:"10vh auto"}}>🧠</div>
-        <button className="btn btn-light btn-lg px-5 fw-semibold mt-2 position-absolute" onClick={onStart} style={{bottom: "20px", left: "20px", right: "20px"}}>
+        {/* <div style={{fontSize:200, margin:"10vh auto"}}>🧠</div> */}
+        <div style={{margin:"auto"}}>
+          <picture>
+            <img src="https://png.pngtree.com/png-vector/20231214/ourmid/pngtree-surgery-clinical-medical-hospital-outpatient-medical-brain-png-image_11338556.png" alt="" className="img-fluid"/>
+          </picture>
+        </div>
+        <button className="btn btn-light btn-lg px-5 fw-semibold mt-2 position-absolute d-md-none" onClick={onStart} style={{bottom: "20px", left: "20px", right: "20px"}}>
           Let's Start
         </button>
       </div>
