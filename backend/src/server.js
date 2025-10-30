@@ -23,9 +23,9 @@ app.use(express.urlencoded({ extended: true }));
 connectDB();
 
 // API Routes
-app.get("/", (req, res) => {
-  res.json({ status: "ok", message: "Server is running ✅"+PORT });
-});
+// app.get("/", (req, res) => {
+//   res.json({ status: "ok", message: "Server is running ✅"+PORT });
+// });
 
 app.use("/api", indexRoutes);
 
