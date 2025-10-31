@@ -48,7 +48,7 @@ const Phone = ({ onSubmit, onBack, showHeader }) => {
           />
         </div>
         <div className="mb-3 text-secondary small pt-5">By proceeding, you agree to verify your mobile number through OTP <br /> and accept our <a href="" className="text-decoration-none text-dark fw-medium">Privacy Policy</a> and <a href="" className="text-decoration-none text-dark fw-medium">Terms of Service</a>.</div>
-        <button className="btn btn-success fw-semibold w-50 m-auto py-2 position-absolute" style={{bottom: "20px", left: "20px", right: "20px"}} type="submit">
+        <button className="btn btn-purple fw-semibold w-50 m-auto py-2 position-absolute" style={{bottom: "20px", left: "20px", right: "20px"}} type="submit">
           Send OTP
         </button>
       </form>

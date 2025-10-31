@@ -8,7 +8,7 @@ const HomePage = () => {
   return (
     <>
       <div className="container-fluid pb-0 overflow-hidden">
-        <div className="row bg-success">
+        <div className="row bg-purple">
           <div className="col-12 pt-3">
             <div className="container">
               <div className="row align-items-end">
@@ -32,15 +32,15 @@ const HomePage = () => {
           <p className="small fw-bold mb-4">Your Root &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span className="">-------------</span></p>
           <div className="row">
             <div className="col-4 text-center">
-              <FontAwesomeIcon icon={faAppleWhole} className="text-success"/><br />
+              <FontAwesomeIcon icon={faAppleWhole} className="text-purple"/><br />
               <p className="small m-0">DANDRUFF</p>
             </div>
             <div className="col-4 text-center">
-              <FontAwesomeIcon icon={faAppleWhole} className="text-success"/><br />
+              <FontAwesomeIcon icon={faAppleWhole} className="text-purple"/><br />
               <p className="small m-0">METABOLISM</p>
             </div>
             <div className="col-4 text-center">
-              <FontAwesomeIcon icon={faAppleWhole} className="text-success"/><br />
+              <FontAwesomeIcon icon={faAppleWhole} className="text-purple"/><br />
               <p className="small m-0">NUTRITION</p>
             </div>
           </div>
@@ -255,38 +255,38 @@ const HomePage = () => {
 
             <div className="d-flex col">
               <div className="d-flex flex-column align-items-center me-3">
-                <div className="rounded-circle bg-success text-white d-flex align-items-center justify-content-center" style={{width: "30px", height: "30px"}}>
+                <div className="rounded-circle bg-purple text-white d-flex align-items-center justify-content-center" style={{width: "30px", height: "30px"}}>
                   <FontAwesomeIcon icon={faBrain} />
                 </div>
-                <div className="flex-grow-1 d-sm-none border-start border-3 border-success" style={{height: "50px"}}></div>
+                <div className="flex-grow-1 d-sm-none border-start border-3 border-purple" style={{height: "50px"}}></div>
               </div>
               <div>
-                <h6 className="text-success mb-1">Month 1-3</h6>
+                <h6 className="text-purple mb-1">Month 1-3</h6>
                 <p className="text-dark mb-4">Controlling dandruff as it acceleration hair fall.</p>
               </div>
             </div>
 
             <div className="d-flex col">
               <div className="d-flex flex-column align-items-center me-3">
-                <div className="rounded-circle bg-success text-white d-flex align-items-center justify-content-center" style={{width: "30px", height: "30px"}}>
+                <div className="rounded-circle bg-purple text-white d-flex align-items-center justify-content-center" style={{width: "30px", height: "30px"}}>
                   <FontAwesomeIcon icon={faBrain} />
                 </div>
-                <div className="flex-grow-1 d-sm-none border-start border-3 border-success" style={{height: "50px"}}></div>
+                <div className="flex-grow-1 d-sm-none border-start border-3 border-purple" style={{height: "50px"}}></div>
               </div>
               <div>
-                <h6 className="text-success mb-1">Month 4-6</h6>
+                <h6 className="text-purple mb-1">Month 4-6</h6>
                 <p className="text-dark mb-4">Visible reduction in hair growth along with thicker, fuller hair.</p>
               </div>
             </div>
 
             <div className="d-flex col">
               <div className="d-flex flex-column align-items-center me-3">
-                <div className="rounded-circle bg-success text-white d-flex align-items-center justify-content-center" style={{width: "30px", height: "30px"}}>
+                <div className="rounded-circle bg-purple text-white d-flex align-items-center justify-content-center" style={{width: "30px", height: "30px"}}>
                   <FontAwesomeIcon icon={faBrain} />
                 </div>
               </div>
               <div>
-                <h6 className="text-success mb-1">Month 7-8</h6>
+                <h6 className="text-purple mb-1">Month 7-8</h6>
                 <p className="text-dark">Onset of new baby hair growth along with thicker, fuller hair.</p>
               </div>
             </div>
@@ -482,7 +482,7 @@ const HomePage = () => {
       </div>
 
       <div className="container py-4">
-        <div className="card bg-success rounded-3 p-2">
+        <div className="card bg-purple rounded-3 p-2">
           <div className="row align-items-center">
             <div className="col text-white ps-3">
               <p className="mb-1">
@@ -515,7 +515,7 @@ const HomePage = () => {
                 <div className="col-8">
                   <p className="m-0 fw-medium">Dr. Rajesh Kumar</p>
                   <p className="small m-0">Dermatologist</p>
-                  <hr className="text-success my-1" />
+                  <hr className="text-purple my-1" />
                   <p className="small m-0 fw-medium">Experience : 15 Years</p>
                 </div>
               </div>
@@ -530,7 +530,7 @@ const HomePage = () => {
                 <div className="col-8">
                   <p className="m-0 fw-medium">Dr. Rajesh Kumar</p>
                   <p className="small m-0">Dermatologist</p>
-                  <hr className="text-success my-1" />
+                  <hr className="text-purple my-1" />
                   <p className="small m-0 fw-medium">Experience : 15 Years</p>
                 </div>
               </div>
@@ -545,7 +545,7 @@ const HomePage = () => {
                 <div className="col-8">
                   <p className="m-0 fw-medium">Dr. Rajesh Kumar</p>
                   <p className="small m-0">Dermatologist</p>
-                  <hr className="text-success my-1" />
+                  <hr className="text-purple my-1" />
                   <p className="small m-0 fw-medium">Experience : 15 Years</p>
                 </div>
               </div>
@@ -560,7 +560,7 @@ const HomePage = () => {
                 <div className="col-8">
                   <p className="m-0 fw-medium">Dr. Rajesh Kumar</p>
                   <p className="small m-0">Dermatologist</p>
-                  <hr className="text-success my-1" />
+                  <hr className="text-purple my-1" />
                   <p className="small m-0 fw-medium">Experience : 15 Years</p>
                 </div>
               </div>

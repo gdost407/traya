@@ -77,7 +77,7 @@ const LoginPage = () => {
 
 function WelcomeScreen({ onStart }) {
   return (
-    <div className="card rounded-0 shadow text-white text-center py-5 px-4 h-100 min-vh-100 position-relative" style={{background: "linear-gradient(220deg, #272fa9, #48573c, #461354)"}}>
+    <div className="card rounded-0 shadow text-white text-center py-5 px-4 h-100 min-vh-100 position-relative" style={{background: "linear-gradient(220deg, #9b3d9b, #8160B7)"}}>
       <div>
         <h1 className="mb-3" style={{ fontWeight: 700, fontSize: "2.2rem" }}>
           <span className="text-warning">Head Issue</span> Track your Health!

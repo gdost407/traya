@@ -64,7 +64,7 @@ const Verify = ({ phone, onBack, showHeader }) => {
         <div className="mb-3 text-secondary small">
           Didn't Receive the Code? <a href="#" className="fw-bold text-dark text-decoration-none">Resend</a>
         </div>
-        <button className="btn btn-success fw-semibold w-50 m-auto py-2 position-absolute" style={{bottom: "20px", left: "20px", right: "20px"}} type="submit">
+        <button className="btn btn-purple fw-semibold w-50 m-auto py-2 position-absolute" style={{bottom: "20px", left: "20px", right: "20px"}} type="submit">
           Verify
         </button>
       </form>

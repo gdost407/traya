@@ -15,25 +15,25 @@ const Footer = () => {
         <div className="container-fluid">
           <div className="row w-100 justify-content-around text-center m-0">
             <div className="col p-2">
-              <Link to="/" className={`text-decoration-none d-flex flex-column align-items-center ${ currentPath === "/" ? "text-success" : "text-muted" }`}>
+              <Link to="/" className={`text-decoration-none d-flex flex-column align-items-center ${ currentPath === "/" ? "text-purple" : "text-muted" }`}>
                 <FontAwesomeIcon icon={faHouse} />
                 <small>Home</small>
               </Link>
             </div>
             <div className="col p-2">
-              <Link to="/login" className={`text-decoration-none d-flex flex-column align-items-center ${ currentPath === "/login" ? "text-success" : "text-muted" }`}>
+              <Link to="/login" className={`text-decoration-none d-flex flex-column align-items-center ${ currentPath === "/login" ? "text-purple" : "text-muted" }`}>
                 <FontAwesomeIcon icon={faBoxOpen} />
                 <small>My Kit</small>
               </Link>
             </div>
             <div className="col p-2">
-              <Link to="/video" className={`text-decoration-none d-flex flex-column align-items-center ${ currentPath === "/video" ? "text-success" : "text-muted" }`}>
+              <Link to="/video" className={`text-decoration-none d-flex flex-column align-items-center ${ currentPath === "/video" ? "text-purple" : "text-muted" }`}>
                 <FontAwesomeIcon icon={faYoutube} />
                 <small>Video</small>
               </Link>
             </div>
             <div className="col p-2">
-              <Link to="/profile" className={`text-decoration-none d-flex flex-column align-items-center ${ currentPath === "/profile" ? "text-success" : "text-muted" }`}>
+              <Link to="/profile" className={`text-decoration-none d-flex flex-column align-items-center ${ currentPath === "/profile" ? "text-purple" : "text-muted" }`}>
                 <FontAwesomeIcon icon={faCircleUser} />
                 <small>You</small>
               </Link>
