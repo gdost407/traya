@@ -8,6 +8,8 @@ const userSchema = new mongoose.Schema(
     age: { type: Number },
     gender: { type: String },
     fcmToken: { type: String },
+    otp: { type: String }, // one-time password
+    otpExpires: { type: Date }, // expires
   },
   { timestamps: true }
 );

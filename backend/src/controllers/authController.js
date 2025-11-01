@@ -1,148 +1,87 @@
 // src/controllers/authController.js
-import Twilio  from "twilio";
 import jwt from "jsonwebtoken";
+import dotenv from "dotenv";
+import axios from "axios";
 import User from "../models/User.js";
+import { successResponse, badRequest, unauthorized, notFound, internalError } from "../utils/responseHandler.js";
 
-const client = new Twilio(
-  process.env.TWILIO_ACCOUNT_SID,
-  process.env.TWILIO_AUTH_TOKEN
-);
+dotenv.config();
+const MSG91_AUTH_KEY = process.env.MSG91_AUTH_KEY;
+const JWT_SECRET = process.env.JWT_SECRET;
 
-export const customerSendOtpCtrl = async (req, res) => {
-  console.log("Request body:", req.body);
-  try {
-    let { contact_no } = req.body;
-    if (!contact_no) return res.status(400).json({ status: false, message: "Contact number is required" });
-    if (!contact_no.startsWith("+91")) contact_no = `+91${contact_no}`;
-    console.log("Formatted contact number:", contact_no);
-    const verification = await client.verify.v2
-      .services(process.env.TWILIO_VERIFY_SID)
-      .verifications.create({
-        to: contact_no,
-        channel: "sms",
-      });
-    res.status(200).json({
-      status: true,
-      message: "OTP sent successfully",
-      sid: verification.sid,
-    });
-  } catch (err) {
-    console.error("Send OTP error:", err);
-    res.status(500).json({
-      status: false,
-      message: "Failed to send OTP",
-      error: err.message,
-    });
+export const sendOtp = async (req, res) => {
+  const { phone } = req.body;
+  if (!phone) return badRequest(res, "Phone number is required");
+
+
+  let user = await User.findOne({ phone });
+  if (!user) {
+    user = new User({ phone });
+    await user.save();
   }
-};
 
-export const customerVerifyOtpCtrl = async (req, res) => {
+  // Generate OTP
+  const otp = Math.floor(100000 + Math.random() * 900000).toString();
+  user.otp = otp;
+  user.otpExpires = Date.now() + 5 * 60 * 1000; // 5 minutes validity
+  await user.save();
+
   try {
-    const { contact_no, otp } = req.body;
-    if (!contact_no || !otp) {
-      return res.status(400).json({
-        status: false,
-        message: "Mobile number and OTP required",
-      });
-    }
-    const verification_check = await client.verify.v2
-      .services(process.env.TWILIO_VERIFY_SID)
-      .verificationChecks.create({
-        to: contact_no.startsWith("+") ? contact_no : `+91${contact_no}`,
-        code: otp,
-      });
-
-    if (verification_check.status !== "approved") {
-      return res.status(401).json({
-        status: false,
-        message: "Invalid or expired OTP",
-      });
-    }
-
-    const customer = await Customer.findOne({ contact_no });
-    if (!customer) {
-      return res.status(404).json({
-        status: false,
-        message: "User not found",
-      });
-    }
-
-    const token = jwt.sign(
+    // Adjust MSG91 API parameters as per your account
+    await axios.post(
+      "https://control.msg91.com/api/v5/flow/",
       {
-        id: customer._id,
-        contact_no: customer.contact_no,
-        cafe: customer.cafe,
-        name: customer.name,
+        template_id: "YOUR_CONTENT_TEMPLATE_ID",
+        sender: "YOUR_SENDER_ID",
+        mobiles: phone,
+        VAR1: otp,
       },
-      process.env.CUSTOMER_SECRET_KEY || "customer_secret",
-      { expiresIn: process.env.JWT_EXPIRY || "18h" }
+      {
+        headers: { Authkey: MSG91_AUTH_KEY },
+      }
     );
-
-    res.cookie("customer_token", token, {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === "production",
-      sameSite: "Strict",
-      maxAge: 1000 * 60 * 60 * 18,
-    });
-
-    res.status(200).json({
-      status: true,
-      message: "Customer login successful",
-      token,
-      customer: {
-        _id: customer._id,
-        name: customer.name,
-        contact_no: customer.contact_no,
-        cafe: customer.cafe,
-      },
-    });
+    
+    return successResponse(res, {}, "OTP sent successfully");
   } catch (err) {
-    console.error("Verify OTP error:", err);
-    res.status(500).json({
-      status: false,
-      message: "OTP verification failed",
-      error: err.message,
-    });
+    return internalError(res, "Failed to send OTP");
   }
 };
 
-export const userExistCheck = async (req, res) => {
-  try {
-    const { phone } = req.params;
-
-    if (!phone) {
-      return res.status(400).json({
-        status: false,
-        message: "Phone number is required",
-      });
-    }
-
-    const user = await User.findOne({ phone });
-
-    if (user) {
-      return res.status(200).json({
-        status: true,
-        exists: true,
-        message: "User already exists",
-        user: {
-          _id: user._id,
-          name: user.name,
-          phone: user.phone,
-        },
-      });
-    }
-
-    return res.status(200).json({
-      status: true,
-      exists: false,
-      message: "User not found",
-    });
-  } catch (error) {
-    console.error("Error checking user:", error);
-    res.status(500).json({
-      status: false,
-      message: "Internal server error",
-      error: error.message,
-    });
+export const checkPhone = async (req, res) => {
+  const { phone } = req.body;
+  const user = await User.findOne({ phone });
+  if (user && user.name) {
+    return successResponse(res, {}, "Phone number is available");
+  } else {
+    return notFound(res, "Phone number not exists");
   }
 };
+
+export const verifyOtp = async (req, res) => {
+  const { phone, otp } = req.body;
+  if (!phone || !otp) return badRequest(res, "Phone and OTP required");
+
+  const user = await User.findOne({ phone });
+  if (!user) return notFound(res, "User not found");
+
+  if (user.otp !== otp || user.otpExpires < Date.now()) {
+    return unauthorized(res, "Invalid or expired OTP");
+  }
+
+  // Generate token and respond
+  const token = jwt.sign({ userId: user._id }, JWT_SECRET, { expiresIn: "5d" });
+  return successResponse(res, { token, user }, "OTP verified successfully");
+};
+
+export const saveProfile = async (req, res) => {
+  const { phone, name, age, gender } = req.body;
+  const user = await User.findOneAndUpdate(
+    { phone },
+    { name, age, gender },
+    { new: true }
+  );
+  if (!user) return notFound(res, "User not found");
+  return successResponse(res, { user }, "Profile saved successfully");
+};
+
+export default { sendOtp, checkPhone, verifyOtp, saveProfile };

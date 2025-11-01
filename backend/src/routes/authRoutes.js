@@ -1,11 +1,11 @@
 import express from "express";
-import { customerSendOtpCtrl, customerVerifyOtpCtrl, userExistCheck } from "../controllers/authController.js";
 const Router = express.Router();
+import { sendOtp, checkPhone, verifyOtp, saveProfile } from "../controllers/authController.js";
 
-// Twilio
-Router.route("/Twilio/send-otp").post(customerSendOtpCtrl);
-Router.route("/Twilio/verify-otp").post(customerVerifyOtpCtrl);
-// Mobile Auth
-Router.route("/User/Check/:phone").get(userExistCheck);
+
+Router.route("/send-otp").post(sendOtp);
+Router.route("/check-phone").post(checkPhone);
+Router.route("/verify-otp").post(verifyOtp);
+Router.route("/profile").post(saveProfile);
 
 export default Router;
