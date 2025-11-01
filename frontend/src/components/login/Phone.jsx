@@ -3,10 +3,11 @@ import toast from "react-hot-toast";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 
-const Phone = ({ onSubmit, onBack, showHeader }) => {
+const Phone = ({ onCheckPhone, onBack, showHeader }) => {
   const [phone, setPhone] = useState("");
+  const countryCode = "+91";
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
 
     if (!phone || phone.length < 10) {
@@ -14,7 +15,29 @@ const Phone = ({ onSubmit, onBack, showHeader }) => {
       return;
     }
 
-    onSubmit(phone);
+    const fullPhone = countryCode + phone;
+
+    try {
+      const response = await fetch("http://localhost:5000/api/auth/check-phone", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ phone: fullPhone.replace(/\s+/g, '') })
+      });
+      const data = await response.json();
+
+      if (response.ok && data.exists !== undefined) {
+        // If exists is true, go to Verify screen, else go to Profile screen
+        onCheckPhone(fullPhone.replace(/\s+/g, ''), data.exists, data.callId || null);
+      } else if (data.success === false && data.message === "Phone number not exists") {
+        // Phone number does not exist — treat as new user, open Profile screen
+        onCheckPhone(fullPhone.replace(/\s+/g, ''), false, null);
+      } else {
+        // Other errors – show toast but don't block screen change
+        toast.error(data.message || "Failed to check phone existence.");
+      }
+    } catch (error) {
+      toast.error("Error checking phone: " + error.message);
+    }
   }
 
   return (

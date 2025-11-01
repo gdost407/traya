@@ -26,9 +26,9 @@ const Profile = ({ phone, onSubmit, onBack, showHeader }) => {
       return;
     }
 
+    // Save profile data here if needed or pass to parent
     onSubmit();
   }
-
 
   return (
     <div className="card rounded-0 shadow text-center py-5 px-4 min-vh-100 position-relative">
@@ -60,7 +60,7 @@ const Profile = ({ phone, onSubmit, onBack, showHeader }) => {
           </div>
 
           <div className="row mb-4">
-            {/* Male */}
+            {/* Gender Selection */}
             <div className="col">
               <label htmlFor="genderMale" className={`card p-2 text-center ${gender === "Male" ? "border-purple bg-light" : ""}`} onClick={() => setGender("Male")} style={{ cursor: "pointer" }} >
                 <input type="radio" name="gender" id="genderMale" value="Male" checked={gender === "Male"} onChange={() => setGender("Male")} className="d-none" />
@@ -68,7 +68,6 @@ const Profile = ({ phone, onSubmit, onBack, showHeader }) => {
               </label>
             </div>
 
-            {/* Female */}
             <div className="col">
               <label htmlFor="genderFemale" className={`card p-2 text-center ${gender === "Female" ? "border-purple bg-light" : ""}`} onClick={() => setGender("Female")} style={{ cursor: "pointer" }} >
                 <input type="radio" name="gender" id="genderFemale" value="Female" checked={gender === "Female"} onChange={() => setGender("Female")} className="d-none" />
@@ -76,7 +75,6 @@ const Profile = ({ phone, onSubmit, onBack, showHeader }) => {
               </label>
             </div>
 
-            {/* Other */}
             <div className="col">
               <label htmlFor="genderOther" className={`card p-2 text-center ${gender === "Other" ? "border-purple bg-light" : ""}`} onClick={() => setGender("Other")} style={{ cursor: "pointer" }} >
                 <input type="radio" name="gender" id="genderOther" value="Other" checked={gender === "Other"} onChange={() => setGender("Other")} className="d-none" />
@@ -87,7 +85,6 @@ const Profile = ({ phone, onSubmit, onBack, showHeader }) => {
 
           <div className="row">
             <div className="col-md-4 col-4">
-              {/* <h6 className="fw-medium">Age : {age}</h6> */}
               <div className="position-relative mb-4">  
                 <input
                   type="tel"
