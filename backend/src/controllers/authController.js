@@ -58,6 +58,7 @@ export const verifyOtp = async (req, res) => {
 };
 
 export const saveProfile = async (req, res) => {
+  console.log(req.body);
   const { phone, name, age, gender } = req.body;
   const user = await User.create({ phone, name, age, gender });
   
