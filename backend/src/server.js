@@ -52,6 +52,6 @@ if (NODE_ENV === "production") {
   });
 }
 
-app.listen(PORT, () => {
+app.listen(PORT, "0.0.0.0", () => {
   console.log(`🚀 Server running in ${NODE_ENV} mode on http://localhost:${PORT}`);
 });

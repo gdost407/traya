@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 
 const Phone = ({ onCheckPhone, onBack, showHeader }) => {
+  const apiUrl = import.meta.env.VITE_API_URL;
   const [phone, setPhone] = useState("");
   const countryCode = "+91";
 
@@ -18,7 +19,7 @@ const Phone = ({ onCheckPhone, onBack, showHeader }) => {
     const fullPhone = countryCode + phone;
 
     try {
-      const response = await fetch("http://localhost:5000/api/auth/check-phone", {
+      const response = await fetch(apiUrl + "/api/auth/check-phone", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ phone: fullPhone.replace(/\s+/g, '') })

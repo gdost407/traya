@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 
 const Verify = ({ phone, callId, newUser, onBack, showHeader, onVerified }) => {
+  const apiUrl = import.meta.env.VITE_API_URL;
   const navigate = useNavigate();
   const codeLen = 6;
   const [values, setValues] = useState(Array(codeLen).fill(""));
@@ -15,7 +16,7 @@ const Verify = ({ phone, callId, newUser, onBack, showHeader, onVerified }) => {
     let called = false;
     async function sendOtp() {
       try {
-        // const response = await fetch("http://localhost:5000/api/auth/send-otp", {
+        // const response = await fetch(apiUrl + "/api/auth/send-otp", {
         //   method: "POST",
         //   headers: { "Content-Type": "application/json" },
         //   body: JSON.stringify({ phone })
@@ -62,7 +63,7 @@ const Verify = ({ phone, callId, newUser, onBack, showHeader, onVerified }) => {
     let otp = values.join("");
     otp = 578633; // MOCK OTP
     try {
-      const response = await fetch("http://localhost:5000/api/auth/verify-otp", {
+      const response = await fetch(apiUrl + "/api/auth/verify-otp", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ otp, callId: serverCallId })
