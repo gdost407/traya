@@ -63,6 +63,10 @@
 }
 .bg-purple{
   background-color: #8160B7 !important;
+  color: #ffffff !important;
+}
+.bg-purple-light{
+  background-color: #d7beff !important;
 }
 .text-purple{
   color: #8160B7 !important;

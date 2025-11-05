@@ -3,8 +3,10 @@ import toast from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
+import { authenticatedPost } from "../../utils/api.js";
+import Cookies from "js-cookie";
 
-const Verify = ({ phone, callId, newUser, onBack, showHeader, onVerified }) => {
+const Verify = ({ phone, callId, newUser, onBack, showHeader, onVerified, profileData }) => {
   const apiUrl = import.meta.env.VITE_API_URL;
   const navigate = useNavigate();
   const codeLen = 6;
@@ -19,20 +21,20 @@ const Verify = ({ phone, callId, newUser, onBack, showHeader, onVerified }) => {
     otpSent.current = true;
     async function sendOtp() {
       try {
-        // const response = await fetch(apiUrl + "/api/auth/send-otp", {
-        //   method: "POST",
-        //   headers: { "Content-Type": "application/json" },
-        //   body: JSON.stringify({ phone })
-        // });
-        // const data = await response.json();
-        // if (response.ok && data.data) {
-          // setServerCallId(data.data);
-          setServerCallId("6b57fe80-fcb8-4369-9076-580a09f75d5d"); // MOCK CALL ID
-          called = true;
-          toast.success("OTP sent successfully");
-        // } else {
-        //   toast.error(data.message || "Failed to send OTP");
-        // }
+        const response = await fetch(apiUrl + "/api/auth/send-otp", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ phone })
+        });
+        const data = await response.json();
+        if (response.ok && data.data) {
+          setServerCallId(data.data);
+          // setServerCallId("6b57fe80-fcb8-4369-9076-580a09f75d5d"); // MOCK CALL ID
+          // toast.success("OTP sent successfully");
+          toast.success(data.message);
+        } else {
+          toast.error(data.message || "Failed to send OTP");
+        }
       } catch (error) {
         toast.error("Error sending OTP: " + error.message);
       }
@@ -64,7 +66,7 @@ const Verify = ({ phone, callId, newUser, onBack, showHeader, onVerified }) => {
     }
 
     let otp = values.join("");
-    otp = 578633; // MOCK OTP
+    // otp = 578633; // MOCK OTP
     try {
       const response = await fetch(apiUrl + "/api/auth/verify-otp", {
         method: "POST",
@@ -73,9 +75,28 @@ const Verify = ({ phone, callId, newUser, onBack, showHeader, onVerified }) => {
       });
       const data = await response.json();
 
+
+// ... existing code ...
+
       if (response.ok) {
-        // Save token for 5 days in localStorage or cookie
-        localStorage.setItem("jwt_token", data.token);
+        // Save token in a cookie for 14 days
+        Cookies.set("jwt_token", data.token, { expires: 14 });
+
+        if (newUser && profileData) {
+          try {
+            const profileResponse = await authenticatedPost("/api/auth/profile", { phone, ...profileData });
+
+            const profileResult = await profileResponse.json();
+
+            if (!profileResponse.ok) {
+              toast.error(profileResult.message || "Failed to save profile");
+              // still redirect, but maybe show a message
+            }
+          } catch (error) {
+            toast.error("Error saving profile: " + error.message);
+          }
+        }
+
         // Redirect based on newUser status
         if (newUser) {
           onVerified(true); // go to assignment page

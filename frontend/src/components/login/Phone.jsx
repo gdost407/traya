@@ -26,12 +26,14 @@ const Phone = ({ onCheckPhone, onBack, showHeader }) => {
       });
       const data = await response.json();
 
-      if (response.ok && data.exists !== undefined) {
-        // If exists is true, go to Verify screen, else go to Profile screen
-        onCheckPhone(fullPhone.replace(/\s+/g, ''), data.exists, data.callId || null);
-      } else if (data.success === false && data.message === "Phone number not exists") {
-        // Phone number does not exist — treat as new user, open Profile screen
-        onCheckPhone(fullPhone.replace(/\s+/g, ''), false, null);
+      if (response.status === 404) {
+        // Phone number does not exist, go to Profile screen
+          onCheckPhone(fullPhone.replace(/\s+/g, ''), false, null);
+      } else if (response.status === 200){
+        // Phone number exists, go to Verify screen
+        onCheckPhone(fullPhone.replace(/\s+/g, ''), true, null);
+      } else if (response.status === 500) {
+        toast.error(data.message || "Internal Server Error");
       } else {
         // Other errors – show toast but don't block screen change
         toast.error(data.message || "Failed to check phone existence.");

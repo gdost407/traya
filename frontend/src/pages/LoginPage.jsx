@@ -11,6 +11,7 @@ const LoginPage = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [isNewUser, setIsNewUser] = useState(false);
   const [callId, setCallId] = useState(null);
+  const [profileData, setProfileData] = useState(null);
 
   useEffect(() => {
     const handleResize = () => setMode(window.innerWidth < 768 ? "mobile" : "desktop");
@@ -42,7 +43,10 @@ const LoginPage = () => {
           {screen === 21 &&
             <Profile
               phone={phoneNumber}
-              onSubmit={() => setScreen(3)}
+              onSubmit={(data) => {
+                setProfileData(data);
+                setScreen(3);
+              }}
               onBack={() => setScreen(2)}
             />
           }
@@ -51,8 +55,15 @@ const LoginPage = () => {
               phone={phoneNumber}
               callId={callId}
               newUser={isNewUser}
+              profileData={profileData}
               onBack={() => (isNewUser ? setScreen(21) : setScreen(2))}
-              onVerified={(signedUp) => setScreen(signedUp ? 4 : 5)} // 4: assignment, 5: dashboard
+              onVerified={(signedUp) => {
+                if (signedUp) {
+                  navigate("/assignment");
+                } else {
+                  navigate("/dashboard");
+                }
+              }}
             />
           }
         </div>

@@ -27,7 +27,7 @@ const Profile = ({ phone, onSubmit, onBack, showHeader }) => {
     }
 
     // Save profile data here if needed or pass to parent
-    onSubmit();
+    onSubmit({ name, age, gender });
   }
 
   return (

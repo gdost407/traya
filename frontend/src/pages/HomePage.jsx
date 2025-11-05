@@ -1,4 +1,6 @@
 import React from "react";
+import Header from "../components/common/Header";
+import Footer from "../components/common/Footer";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAppleWhole, faAnglesRight, faBrain, fa1, fa2, fa3, faQuestion, faHouse, faBoxOpen, faCircleUser } from "@fortawesome/free-solid-svg-icons";
@@ -7,6 +9,7 @@ import { faDrupal, faYoutube } from "@fortawesome/free-brands-svg-icons";
 const HomePage = () => {
   return (
     <>
+      <Header />
       <div className="container-fluid pb-0 overflow-hidden">
         <div className="row bg-purple">
           <div className="col-12 pt-3">
@@ -569,6 +572,7 @@ const HomePage = () => {
         </div>
       </div>
 
+      <Footer />
     </>
   );
 };

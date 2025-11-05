@@ -7,18 +7,41 @@ import VideoPage from '../pages/VideoPage'
 import LoginPage from '../pages/LoginPage'
 import AssignmentPage from '../pages/AssignmentPage'
 
+import { useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import Cookies from "js-cookie";
+import ProfilePage from '../pages/ProfilePage'
+
+// ... existing code ...
+
 function AppRoutes() {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    const token = Cookies.get("jwt_token");
+    if (token && location.pathname === "/") {
+      navigate("/dashboard");
+    }
+  }, [navigate, location]);
 
   return (
-    <BrowserRouter>
       <Routes>
         <Route path="/" element={<LoginPage />} />
         <Route path="/assignment" element={<AssignmentPage />} />
         <Route path="/dashboard" element={<HomePage />} />
         <Route path="/video" element={<VideoPage />} />
+        <Route path="/profile" element={<ProfilePage />} />
       </Routes>
+  )
+}
+
+function AppRoutesWrapper() {
+  return (
+    <BrowserRouter>
+      <AppRoutes />
     </BrowserRouter>
   )
 }
 
-export default AppRoutes
+export default AppRoutesWrapper;

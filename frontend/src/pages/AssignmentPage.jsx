@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
+import toast from "react-hot-toast";
 import WelcomeScreen from "../components/assignment/WelcomeScreen";
 import QuizScreen from "../components/assignment/QuizScreen";
 import CompletionScreen from "../components/assignment/CompletionScreen";
+import { authenticatedPost } from "../utils/api";
 
 const questions = [
   {
@@ -141,12 +143,41 @@ const AssignmentPage = () => {
   const goPrev = () => current > 0 && setCurrent(current - 1);
   const handleAnswer = (answer) => setAnswers({...answers, [current]: answer});
   const handleComplete = async () => {
-    setStep("complete");
-    await fetch("/api/assignment", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ answers }),
-    });
+    try {
+      // Format the answers to include both questions and answers
+      const formattedAnswers = Object.keys(answers).map(index => {
+        const questionIndex = parseInt(index);
+        const question = questions[questionIndex];
+        const selectedAnswers = answers[questionIndex];
+        
+        return {
+          question: question.question,
+          questionTitle: question.title,
+          questionType: question.type,
+          selectedOptions: selectedAnswers.map(answerIndex => question.options[answerIndex]),
+          selectedOptionIndices: selectedAnswers
+        };
+      });
+
+      // Prepare the data for the backend
+      const assignmentData = {
+        questions: JSON.stringify(questions),
+        answers: JSON.stringify(formattedAnswers)
+      };
+
+      // Save to backend using authenticated API call
+      const response = await authenticatedPost("/api/assignments/save", assignmentData);
+      
+      if (response.success) {
+        setStep("complete");
+      } else {
+        console.error("Failed to save assignment:", response.error);
+        toast.error("Failed to save assignment. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error saving assignment:", error);
+      toast.error("An error occurred while saving your assignment. Please try again.");
+    }
   };
 
   return (
