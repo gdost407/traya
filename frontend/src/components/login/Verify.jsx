@@ -12,8 +12,11 @@ const Verify = ({ phone, callId, newUser, onBack, showHeader, onVerified }) => {
   const inputRefs = useRef([]);
   const [serverCallId, setServerCallId] = useState(callId);
 
+  const otpSent = useRef(false);
+
   useEffect(() => {
-    let called = false;
+    if (otpSent.current) return;
+    otpSent.current = true;
     async function sendOtp() {
       try {
         // const response = await fetch(apiUrl + "/api/auth/send-otp", {
