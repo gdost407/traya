@@ -167,11 +167,12 @@ const AssignmentPage = () => {
 
       // Save to backend using authenticated API call
       const response = await authenticatedPost("/api/assignments/save", assignmentData);
+      const data = await response.json();
       
-      if (response.success) {
+      if (data.success) {
         setStep("complete");
       } else {
-        console.error("Failed to save assignment:", response.error);
+        console.error("Failed to save assignment:", data.error);
         toast.error("Failed to save assignment. Please try again.");
       }
     } catch (error) {

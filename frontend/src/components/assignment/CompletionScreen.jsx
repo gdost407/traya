@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function CompletionScreen() {
   return (
-    <div className="d-flex flex-column align-items-center text-center p-5">
+    <div className="d-flex flex-column align-items-center text-center p-5 min-vh-100">
       <div className="display-1 mb-4">
         <picture>
           <img src="https://img.freepik.com/free-vector/man-getting-award-writing_74855-5891.jpg" alt="" style={{maxWidth: "300px", width: "100%", aspectRatio: "1", objectFit: "cover"}}/>
