@@ -129,6 +129,7 @@ const questions = [
 ];
 
 const AssignmentPage = () => {
+  const apiUrl = import.meta.env.VITE_API_URL || window.location.origin;
   const [step, setStep] = useState("welcome");
   const [current, setCurrent] = useState(0);
   const [answers, setAnswers] = useState({});

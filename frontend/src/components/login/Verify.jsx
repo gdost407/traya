@@ -5,9 +5,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { authenticatedPost } from "../../utils/api.js";
 import Cookies from "js-cookie";
+import axios from 'axios';
 
 const Verify = ({ phone, callId, newUser, onBack, showHeader, onVerified, profileData }) => {
-  const apiUrl = import.meta.env.VITE_API_URL;
+  const apiUrl = import.meta.env.VITE_API_URL || window.location.origin;
   const navigate = useNavigate();
   const codeLen = 6;
   const [values, setValues] = useState(Array(codeLen).fill(""));
@@ -21,13 +22,9 @@ const Verify = ({ phone, callId, newUser, onBack, showHeader, onVerified, profil
     otpSent.current = true;
     async function sendOtp() {
       try {
-        const response = await fetch(apiUrl + "/api/auth/send-otp", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ phone })
-        });
-        const data = await response.json();
-        if (response.ok && data.data) {
+        const response = await axios.post(apiUrl + "/api/auth/send-otp", { phone });
+        const data = response.data;
+        if (response.status === 200 && data.data) {
           setServerCallId(data.data);
           // setServerCallId("6b57fe80-fcb8-4369-9076-580a09f75d5d"); // MOCK CALL ID
           // toast.success("OTP sent successfully");
@@ -36,7 +33,11 @@ const Verify = ({ phone, callId, newUser, onBack, showHeader, onVerified, profil
           toast.error(data.message || "Failed to send OTP");
         }
       } catch (error) {
-        toast.error("Error sending OTP: " + error.message);
+        if (error.response) {
+          toast.error(error.response.data.message || "Failed to send OTP");
+        } else {
+          toast.error("Error sending OTP: " + error.message);
+        }
       }
     }
 
@@ -68,17 +69,13 @@ const Verify = ({ phone, callId, newUser, onBack, showHeader, onVerified, profil
     let otp = values.join("");
     // otp = 578633; // MOCK OTP
     try {
-      const response = await fetch(apiUrl + "/api/auth/verify-otp", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ otp, callId: serverCallId })
-      });
-      const data = await response.json();
+      const response = await axios.post(apiUrl + "/api/auth/verify-otp", { otp, callId: serverCallId });
+      const data = response.data;
 
 
 // ... existing code ...
 
-      if (response.ok) {
+      if (response.status === 200) {
         // Save token in a cookie for 14 days
         Cookies.set("jwt_token", data.token, { expires: 14 });
 
@@ -86,9 +83,9 @@ const Verify = ({ phone, callId, newUser, onBack, showHeader, onVerified, profil
           try {
             const profileResponse = await authenticatedPost("/api/auth/profile", { phone, ...profileData });
 
-            const profileResult = await profileResponse.json();
+            const profileResult = profileResponse.data;
 
-            if (!profileResponse.ok) {
+            if (profileResponse.status !== 200) {
               toast.error(profileResult.message || "Failed to save profile");
               // still redirect, but maybe show a message
             }
@@ -149,20 +146,20 @@ const Verify = ({ phone, callId, newUser, onBack, showHeader, onVerified, profil
               e.preventDefault();
               // resend OTP on click
               try {
-                const response = await fetch("/api/auth/send-otp", {
-                  method: "POST",
-                  headers: { "Content-Type": "application/json" },
-                  body: JSON.stringify({ phone })
-                });
-                const data = await response.json();
-                if (response.ok && data.callId) {
+                const response = await axios.post(apiUrl + "/api/auth/send-otp", { phone });
+                const data = response.data;
+                if (response.status === 200 && data.callId) {
                   setServerCallId(data.callId);
                   toast.success("OTP resent successfully");
                 } else {
                   toast.error(data.message || "Failed to resend OTP");
                 }
               } catch (error) {
-                toast.error("Error resending OTP: " + error.message);
+                if (error.response) {
+                  toast.error(error.response.data.message || "Failed to resend OTP");
+                } else {
+                  toast.error("Error resending OTP: " + error.message);
+                }
               }
             }}
           >Resend</a>
