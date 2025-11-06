@@ -26,14 +26,12 @@ const Phone = ({ onCheckPhone, onBack, showHeader }) => {
       
       const data = response.data;
 
-      if (response.status === 404) {
+      if (data.success == false) {
         // Phone number does not exist, go to Profile screen
           onCheckPhone(fullPhone.replace(/\s+/g, ''), false, null);
-      } else if (response.status === 200){
+      } else if (data.success == true){
         // Phone number exists, go to Verify screen
         onCheckPhone(fullPhone.replace(/\s+/g, ''), true, null);
-      } else if (response.status === 500) {
-        toast.error(data.message || "Internal Server Error");
       } else {
         // Other errors – show toast but don't block screen change
         toast.error(data.message || "Failed to check phone existence.");

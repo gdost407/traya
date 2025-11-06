@@ -168,7 +168,7 @@ const AssignmentPage = () => {
 
       // Save to backend using authenticated API call
       const response = await authenticatedPost("/api/assignments/save", assignmentData);
-      const data = await response.json();
+      const data = response.data;
       
       if (data.success) {
         setStep("complete");

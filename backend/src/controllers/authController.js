@@ -3,7 +3,7 @@ import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
 import axios from "axios";
 import User from "../models/User.js";
-import { successResponse, badRequest, unauthorized, notFound, internalError } from "../utils/responseHandler.js";
+import { successResponse, badRequest, unauthorized, notFound, internalError, successFalse } from "../utils/responseHandler.js";
 
 dotenv.config();
 const JWT_SECRET = process.env.JWT_SECRET;
@@ -36,7 +36,7 @@ export const checkPhone = async (req, res) => {
   if (user && user.name) {
     return successResponse(res, {}, "Phone number is available");
   } else {
-    return notFound(res, "Phone number not exists");
+    return successFalse(res, {}, "Phone number not exists");
   }
 };
 
