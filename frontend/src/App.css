@@ -66,7 +66,7 @@
   color: #ffffff !important;
 }
 .bg-purple-light{
-  background-color: #d7beff !important;
+  background-color: #f3ecff !important;
 }
 .text-purple{
   color: #8160B7 !important;
@@ -77,8 +77,8 @@
   color: #fff !important;
 }
 .btn-purple:hover{
-  background-color: #9b3d9b !important;
-  border-color: #9b3d9b !important;
+  background-color: #7852b6 !important;
+  border-color: #7852b6 !important;
   color: #fff !important;
 }
 .btn-outline-purple{
@@ -86,8 +86,8 @@
   color: #8160B7 !important;
 }
 .btn-outline-purple:hover{
-  border-color: #9b3d9b !important;
-  color: #9b3d9b !important;
+  border-color: #6938b7 !important;
+  color: #6938b7 !important;
 }
 .border-purple{
   border-color: #8160B7 !important;
@@ -95,7 +95,7 @@
 
 /* bootstrap class changes */
 .small{
-  font-size: 0.8rem !important;
+  font-size: 0.9rem !important;
 }
 .fs-5px{
   font-size: 5px !important;

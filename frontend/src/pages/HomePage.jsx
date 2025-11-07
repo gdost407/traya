@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../components/common/Header";
 import Footer from "../components/common/Footer";
 import { Link } from "react-router-dom";
@@ -7,9 +7,440 @@ import { faAppleWhole, faAnglesRight, faBrain, fa1, fa2, fa3, faQuestion, faHous
 import { faDrupal, faYoutube } from "@fortawesome/free-brands-svg-icons";
 
 const HomePage = () => {
+  const [selectedGender, setSelectedGender] = useState('male');
+
   return (
     <>
       <Header />
+      
+      <style>{`
+        .traya-homepage {
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+        .navbar-custom {
+          background: white;
+          box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+          padding: 15px 0;
+        }
+        .navbar-brand {
+          font-size: 32px;
+          font-weight: 700;
+          color: #2d8a7c !important;
+        }
+        .nav-link {
+          color: #333 !important;
+          font-weight: 500;
+          margin: 0 15px;
+          transition: color 0.3s;
+        }
+        .nav-link:hover {
+          color: #2d8a7c !important;
+        }
+        .btn-primary-custom {
+          background: #2d8a7c;
+          border: none;
+          padding: 12px 30px;
+          border-radius: 30px;
+          font-weight: 600;
+          color: white;
+          transition: all 0.3s;
+        }
+        .btn-primary-custom:hover {
+          background: #236b5f;
+          transform: translateY(-2px);
+          box-shadow: 0 4px 12px rgba(45,138,124,0.3);
+        }
+        .hero-content h1 {
+          font-size: 48px;
+          font-weight: 700;
+          color: #1a1a1a;
+          margin-bottom: 20px;
+          line-height: 1.2;
+        }
+        .hero-content p {
+          font-size: 20px;
+          color: #555;
+          margin-bottom: 30px;
+        }
+        .hero-image {
+          width: 100%;
+          height: 450px;
+          border-radius: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: white;
+          font-size: 24px;
+          font-weight: 600;
+          box-shadow: 0 10px 40px rgba(45,138,124,0.2);
+        }
+        .stats-section {
+          padding: 60px 0;
+          background: white;
+        }
+        
+        
+        
+        .cta-section {
+          padding: 80px 0;
+          background: linear-gradient(135deg, #e8f5f3 0%, #f0f9f7 100%);
+          text-align: center;
+        }
+        .cta-box {
+          background: white;
+          border-radius: 20px;
+          padding: 50px;
+          max-width: 700px;
+          margin: 0 auto;
+          box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        .price-tag {
+          font-size: 36px;
+          font-weight: 700;
+          color: #2d8a7c;
+          margin: 20px 0;
+        }
+        .gender-toggle {
+          display: flex;
+          justify-content: center;
+          gap: 15px;
+          margin: 30px 0;
+        }
+        .gender-btn {
+          padding: 12px 40px;
+          border: 2px solid #2d8a7c;
+          background: white;
+          color: #2d8a7c;
+          border-radius: 30px;
+          font-weight: 600;
+          cursor: pointer;
+          transition: all 0.3s;
+        }
+        .gender-btn.active {
+          background: #2d8a7c;
+          color: white;
+        }
+        
+      `}</style>
+
+      {/* Hero Section */}
+      <style>{`
+        .badge-section {
+          display: flex;
+          justify-content: center;
+          gap: 30px;
+          margin: 40px 0;
+          flex-wrap: wrap;
+        }
+        .badge-item {
+          text-align: center;
+        }
+        .badge-icon {
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 0 auto 10px;
+          color: white;
+          font-size: 24px;
+          font-weight: 700;
+        }
+        .badge-text {
+          font-size: 14px;
+          color: #666;
+          font-weight: 600;
+        }
+      `}</style>
+      <section className="bg-purple-light py-5 position-relative overflow-hidden">
+        <div className="container">
+          <div className="row align-items-center">
+            <div className="col-lg-6 hero-content">
+              <h1>Get Your Hair Back with Science-Backed Solutions</h1>
+              <p>93% saw visible results with our customized hair growth plans combining Ayurveda, modern science & nutrition</p>
+              <Link to="/login" className="btn btn-purple rounded-pill btn-lg me-3">Take Free Hair Test</Link>
+              <Link to="/assignment" className="btn btn-outline-purple rounded-pill btn-lg">Learn More</Link>
+              
+              <div className="badge-section mt-5">
+                <div className="badge-item">
+                  <div className="badge-icon bg-purple">✓</div>
+                  <div className="badge-text">AYUSH Certified</div>
+                </div>
+                <div className="badge-item">
+                  <div className="badge-icon bg-purple">★</div>
+                  <div className="badge-text">Award Winning</div>
+                </div>
+                <div className="badge-item">
+                  <div className="badge-icon bg-purple">💯</div>
+                  <div className="badge-text">Money Back Guarantee</div>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-6">
+              <div className="hero-image bg-purple">
+                Hero Image - Hair Growth Results
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <style>{`
+        .stat-card {
+          transition: all 0.3s;
+        }
+        .stat-card:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        }
+      `}</style>
+      <section className="py-5 px-3">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-3 col-6 mb-3">
+              <div className="stat-card bg-purple-light text-center p-3 rounded-4">
+                <div className="fw-bold text-purple fs-1">8L+</div>
+                <div className="fw-bold fs-6 text-muted">Happy Customers</div>
+              </div>
+            </div>
+            <div className="col-md-3 col-6 mb-3">
+              <div className="stat-card bg-purple-light text-center p-3 rounded-4">
+                <div className="fw-bold text-purple fs-1">93%</div>
+                <div className="fw-bold fs-6 text-muted">Saw Results</div>
+              </div>
+            </div>
+            <div className="col-md-3 col-6">
+              <div className="stat-card bg-purple-light text-center p-3 rounded-4">
+                <div className="fw-bold text-purple fs-1">70+</div>
+                <div className="fw-bold fs-6 text-muted">Hair Experts</div>
+              </div>
+            </div>
+            <div className="col-md-3 col-6">
+              <div className="stat-card bg-purple-light text-center p-3 rounded-4">
+                <div className="fw-bold text-purple fs-1">100%</div>
+                <div className="fw-bold fs-6 text-muted">Natural Formula</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <style>{`
+        .feature-icon {
+          width: 80px;
+          height: 80px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 0 auto 25px;
+          color: white;
+          font-size: 36px;
+          font-weight: 700;
+        }
+      `}</style>
+      <section className="py-5 px-3 bg-purple-light">
+        <div className="container">
+          <h1 className="text-center fw-bold">Why Choose Traya?</h1>
+          <p className="text-center">
+            Our holistic approach combines the best of traditional wisdom with modern science for lasting hair growth
+          </p>
+          
+          <div className="row">
+            <div className="col-md-4 mb-4">
+              <div className="card rounded-4 text-center h-100">
+                <div className="feature-icon bg-purple">🔬</div>
+                <h3 className="fw-medium mb-3">Free Hair Test™</h3>
+                <p className="text-muted small">
+                  Powered by proprietary algorithm to accurately diagnose your hair type, stage, and root causes of hair loss
+                </p>
+              </div>
+            </div>
+            
+            <div className="col-md-4 mb-4">
+              <div className="card rounded-4 text-center h-100">
+                <div className="feature-icon bg-purple">🌿</div>
+                <h3 className="fw-medium mb-3">Customized Treatment</h3>
+                <p className="text-muted small">
+                  Personalized hair growth plans based on your unique hair profile and internal root causes
+                </p>
+              </div>
+            </div>
+            
+            <div className="col-md-4 mb-4">
+              <div className="card rounded-4 text-center h-100">
+                <div className="feature-icon bg-purple">👨‍⚕️</div>
+                <h3 className="fw-medium mb-3">Expert Guidance</h3>
+                <p className="text-muted small">
+                  Trusted by 70+ hair experts across India. Get continuous support throughout your journey
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="row mt-4">
+            <div className="col-md-4 mb-4">
+              <div className="card rounded-4 text-center h-100">
+                <div className="feature-icon bg-purple">✨</div>
+                <h3 className="fw-medium mb-3">Long-Lasting Results</h3>
+                <p className="text-muted small">
+                  Works on internal root causes for visible and sustainable hair growth that lasts
+                </p>
+              </div>
+            </div>
+            
+            <div className="col-md-4 mb-4">
+              <div className="card rounded-4 text-center h-100">
+                <div className="feature-icon bg-purple">🏆</div>
+                <h3 className="fw-medium mb-3">Award Winning</h3>
+                <p className="text-muted small">
+                  Most Effective Haircare Product of the Year 2022 by India's Healthcare Excellence
+                </p>
+              </div>
+            </div>
+            
+            <div className="col-md-4 mb-4">
+              <div className="card rounded-4 text-center h-100">
+                <div className="feature-icon bg-purple">💰</div>
+                <h3 className="fw-medium mb-3">Money Back Guarantee</h3>
+                <p className="text-muted small">
+                  100% money-back guarantee if you don't see results with our complete customized plan
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Science Section */}
+      <section className="py-5 px-3 bg-purple">
+        <div className="container">
+          <div className="text-center">
+            <div className="d-inline-block rounded-pill px-4 py-2 mb-3 fw-medium bg-purple-light text-dark">OUR UNIQUE APPROACH</div>
+            <h2 className="section-title">
+              Traya's Holistic 3 Science Formula
+            </h2>
+            <p className="" style={{color: 'rgba(255,255,255,0.9)'}}>
+              A synergistic blend designed to tackle hair loss from multiple root causes
+            </p>
+            
+            <div className="d-flex justify-content-center gap-3 flex-wrap mt-5">
+              <div className="bg-white text-purple px-4 py-2 rounded-pill fs-6 fw-medium">🌿 Ayurveda</div>
+              <div className="bg-white text-purple px-4 py-2 rounded-pill fs-6 fw-medium">🔬 Modern Science</div>
+              <div className="bg-white text-purple px-4 py-2 rounded-pill fs-6 fw-medium">🥗 Food Science</div>
+            </div>
+            
+            <p className="mt-5 small" style={{fontSize: '18px', maxWidth: '800px', margin: '40px auto 0', lineHeight: '1.8'}}>
+              Lab-tested ingredients and adaptogenic herbs clear internal blockages and boost hair regeneration naturally. 
+              When combined with our healing dietary plan, it delivers exceptional long-term hair growth results.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <style>{`
+        .testimonial-card {
+          border-left: 4px solid;
+        }
+      `}</style>
+      <section className="py-5">
+        <div className="container">
+          <h2 className="fw-semibold">Real Results from Real People</h2>
+          <p className="small">
+            See what our customers are saying about their hair transformation journey
+          </p>
+          
+          <div className="row">
+            <div className="col-md-6">
+              <div className="card rounded-4 mb-3 testimonial-card border-purple">
+                <div className="text-danger">★★★★★</div>
+                <p className="fst-italic">
+                  "I was skeptical at first, but after 5 months on Traya's plan, I can see visible regrowth. 
+                  The customized approach really works! The expert guidance made all the difference."
+                </p>
+                <div className="text-purple fs-5 fw-bold">- Rajesh K., Mumbai</div>
+              </div>
+            </div>
+            
+            <div className="col-md-6">
+              <div className="card rounded-4 mb-3 testimonial-card border-purple">
+                <div className="text-danger">★★★★★</div>
+                <p className="fst-italic">
+                  "Finally found a solution that addresses the root cause. My hair fall has reduced by 80% 
+                  in just 3 months. Thank you Traya for giving me back my confidence!"
+                </p>
+                <div className="text-purple fs-5 fw-bold">- Priya S., Bangalore</div>
+              </div>
+            </div>
+          </div>
+          
+          <div className="row">
+            <div className="col-md-6">
+              <div className="card rounded-4 mb-3 testimonial-card border-purple">
+                <div className="text-danger">★★★★★</div>
+                <p className="fst-italic">
+                  "The holistic approach is what sets Traya apart. It's not just about applying products, 
+                  but understanding what's happening inside your body. Highly recommend!"
+                </p>
+                <div className="text-purple fs-5 fw-bold">- Amit D., Delhi</div>
+              </div>
+            </div>
+            
+            <div className="col-md-6">
+              <div className="card rounded-4 mb-3 testimonial-card border-purple">
+                <div className="text-danger">★★★★★</div>
+                <p className="fst-italic">
+                  "Women Santulan has been a game-changer for me. My hair is thicker, healthier, and I've 
+                  noticed significant regrowth. The best investment I've made for myself!"
+                </p>
+                <div className="text-purple fs-5 fw-bold">- Sneha M., Pune</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="bg-purple-light py-5"> 
+        <div className="container">
+          <div className="cta-box">
+            <h2 className="section-title" style={{marginBottom: '20px'}}>Start Your Hair Growth Journey Today</h2>
+            <p style={{fontSize: '18px', color: '#666', marginBottom: '30px'}}>
+              Take our free hair test to get your personalized treatment plan
+            </p>
+            
+            <div className="gender-toggle">
+              <button 
+                className={`gender-btn ${selectedGender === 'male' ? 'active' : ''}`}
+                onClick={() => setSelectedGender('male')}
+              >
+                For Men
+              </button>
+              <button 
+                className={`gender-btn ${selectedGender === 'female' ? 'active' : ''}`}
+                onClick={() => setSelectedGender('female')}
+              >
+                For Women
+              </button>
+            </div>
+            
+            <div className="text-purple fs-1 fw-bold">
+              Starting at {selectedGender === 'male' ? '₹1,699' : '₹2,000'}/month*
+            </div>
+            
+            <button className="btn btn-purple mt-3 rounded-pill btn-lg">Take Free Hair Test Now</button>
+            
+            <p style={{fontSize: '12px', color: '#999', marginTop: '20px'}}>
+              *Price based on Stage 1 hair fall. Actual price may vary based on your personalized assessment
+            </p>
+          </div>
+        </div>
+      </section>
+
       <div className="container-fluid pb-0 overflow-hidden">
         <div className="row bg-purple">
           <div className="col-12 pt-3">

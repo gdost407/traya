@@ -6,7 +6,7 @@ import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 
 const Header = () => {
   return (
-    <nav className="navbar navbar-expand-lg shadow bg-white sticky-top d-none d-sm-block">
+    <nav className="navbar navbar-expand-lg bg-purple-light sticky-top d-none d-sm-block">
       <div className="container">
         <Link className="navbar-brand text-purple fw-medium" href="#">
           <img src="/1761393804595.png" alt="" style={{width: "50px"}} /> The Last Headache

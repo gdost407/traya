@@ -21,15 +21,15 @@ function AppRoutes() {
   useEffect(() => {
     const token = Cookies.get("jwt_token");
     if (token && location.pathname === "/") {
-      navigate("/dashboard");
+      navigate("/");
     }
   }, [navigate, location]);
 
   return (
       <Routes>
-        <Route path="/" element={<LoginPage />} />
+        <Route path="/login" element={<LoginPage />} />
         <Route path="/assignment" element={<AssignmentPage />} />
-        <Route path="/dashboard" element={<HomePage />} />
+        <Route path="/" element={<HomePage />} />
         <Route path="/video" element={<VideoPage />} />
         <Route path="/profile" element={<ProfilePage />} />
       </Routes>
