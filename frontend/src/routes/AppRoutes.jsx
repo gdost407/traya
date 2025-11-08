@@ -11,6 +11,8 @@ import { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 import ProfilePage from '../pages/ProfilePage'
+import PrivacyPolicyPage from '../pages/PrivacyPolicyPage'
+import TermsConditionPage from '../pages/TermsConditionPage'
 
 // ... existing code ...
 
@@ -32,6 +34,9 @@ function AppRoutes() {
         <Route path="/" element={<HomePage />} />
         <Route path="/video" element={<VideoPage />} />
         <Route path="/profile" element={<ProfilePage />} />
+        {/* open pages */}
+        <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+        <Route path="/terms-and-conditions" element={<TermsConditionPage />} />
       </Routes>
   )
 }

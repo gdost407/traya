@@ -779,7 +779,7 @@ const HomePage = () => {
         </div>
       </div>
 
-      <div className="d-none container py-4">
+      <div className="container py-4">
         <h6 className="fw-bold">Meet Our Team Of Doctors</h6>
         
         <div className="d-flex overflow-x-auto pb-2">

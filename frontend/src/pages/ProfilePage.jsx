@@ -84,6 +84,12 @@ const ProfilePage = () => {
           <br />
           <ul>
             <li>
+              <Link to="/privacy-policy" className="text-decoration-none text-dark">Privacy Policy</Link>
+            </li>
+            <li>
+              <Link to="/terms-and-conditions" className="text-decoration-none text-dark">Terms & Condition</Link>
+            </li>
+            <li>
               <button onClick={handleLogout} className="btn btn-link text-decoration-none p-0" style={{background: 'none', border: 'none', color: 'inherit', cursor: 'pointer'}}>
                 Logout
               </button>
