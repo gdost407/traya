@@ -12,56 +12,9 @@ const HomePage = () => {
   return (
     <>
       <Header />
-      
+
+      {/* Hero Section */}
       <style>{`
-        .traya-homepage {
-          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-        }
-        .navbar-custom {
-          background: white;
-          box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-          padding: 15px 0;
-        }
-        .navbar-brand {
-          font-size: 32px;
-          font-weight: 700;
-          color: #2d8a7c !important;
-        }
-        .nav-link {
-          color: #333 !important;
-          font-weight: 500;
-          margin: 0 15px;
-          transition: color 0.3s;
-        }
-        .nav-link:hover {
-          color: #2d8a7c !important;
-        }
-        .btn-primary-custom {
-          background: #2d8a7c;
-          border: none;
-          padding: 12px 30px;
-          border-radius: 30px;
-          font-weight: 600;
-          color: white;
-          transition: all 0.3s;
-        }
-        .btn-primary-custom:hover {
-          background: #236b5f;
-          transform: translateY(-2px);
-          box-shadow: 0 4px 12px rgba(45,138,124,0.3);
-        }
-        .hero-content h1 {
-          font-size: 48px;
-          font-weight: 700;
-          color: #1a1a1a;
-          margin-bottom: 20px;
-          line-height: 1.2;
-        }
-        .hero-content p {
-          font-size: 20px;
-          color: #555;
-          margin-bottom: 30px;
-        }
         .hero-image {
           width: 100%;
           height: 450px;
@@ -72,59 +25,7 @@ const HomePage = () => {
           color: white;
           font-size: 24px;
           font-weight: 600;
-          box-shadow: 0 10px 40px rgba(45,138,124,0.2);
         }
-        .stats-section {
-          padding: 60px 0;
-          background: white;
-        }
-        
-        
-        
-        .cta-section {
-          padding: 80px 0;
-          background: linear-gradient(135deg, #e8f5f3 0%, #f0f9f7 100%);
-          text-align: center;
-        }
-        .cta-box {
-          background: white;
-          border-radius: 20px;
-          padding: 50px;
-          max-width: 700px;
-          margin: 0 auto;
-          box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-        }
-        .price-tag {
-          font-size: 36px;
-          font-weight: 700;
-          color: #2d8a7c;
-          margin: 20px 0;
-        }
-        .gender-toggle {
-          display: flex;
-          justify-content: center;
-          gap: 15px;
-          margin: 30px 0;
-        }
-        .gender-btn {
-          padding: 12px 40px;
-          border: 2px solid #2d8a7c;
-          background: white;
-          color: #2d8a7c;
-          border-radius: 30px;
-          font-weight: 600;
-          cursor: pointer;
-          transition: all 0.3s;
-        }
-        .gender-btn.active {
-          background: #2d8a7c;
-          color: white;
-        }
-        
-      `}</style>
-
-      {/* Hero Section */}
-      <style>{`
         .badge-section {
           display: flex;
           justify-content: center;
@@ -178,13 +79,212 @@ const HomePage = () => {
               </div>
             </div>
             <div className="col-lg-6">
-              <div className="hero-image bg-purple">
-                Hero Image - Hair Growth Results
+              <div className="hero-image">
+                <img alt="" class="w-100 h-100 object-fit-cover" srcset="" src="https://testingwing.in/wp-content/uploads/2021/09/9245938-1-1-1000x570.png"/>
               </div>
             </div>
           </div>
         </div>
       </section>
+
+      <div className="container py-5">
+        <div className="d-flex overflow-x-auto pb-2">
+          <div className="col-md-3 col-sm-4 col-6 px-1">
+            <div className="card p-1 h-100">
+              <p className="m-1 fs-10px">
+                <span className="bg-secondary rounded-1 px-2 text-white"><FontAwesomeIcon icon={faDrupal} /> Dermatology</span>
+                <span className="bg-warning rounded-1 px-2 float-end">Must Have</span>
+              </p>
+              <p className="m-0 text-center">
+                <img src="https://traya.health/cdn/shop/files/intro_9c482754-9edc-49d1-b2a0-31628d1a9b1a.webp?v=1758484918&width=533" alt="Product" style={{width: "100%", minHeight: "180px", objectFit: "cover", aspectRatio: "1"}} />
+              </p>
+              <div style={{height: "4rem"}}>
+                <p className="small text-center m-0 fw-medium">ANTI-DANDRUFF SHAMPOO</p>
+                <p className="small text-center "><del className="fs-10px">₹300</del> <span className="fw-medium">₹281</span></p>
+              </div>
+              <p className="m-0 fs-10px text-center px-3">
+                made with anti-fungal ingredients to get rid of dandruff of all types
+              </p>
+              <hr className="m-2" />
+              <div className="d-flex px-2 overflow-hidden">
+                <div className="col p-0 text-center">
+                  <img src="https://img.pikbest.com/png-images/20241225/a-green-aloe-vera-plant-with-spiky-leaves-on-a-white-transparent-png-background_11301626.png!sw800" className="border rounded-circle" alt="" style={{width: "25px", objectFit: "cover", aspectRatio: "1", padding:"2px"}}/> <br />
+                  <p className="m-0 fs-8px">Bhringraj</p>
+                </div>
+                <div className="col p-0 text-center">
+                  <img src="https://img.pikbest.com/png-images/20241225/a-green-aloe-vera-plant-with-spiky-leaves-on-a-white-transparent-png-background_11301626.png!sw800" className="border rounded-circle" alt="" style={{width: "25px", objectFit: "cover", aspectRatio: "1", padding:"2px"}}/> <br />
+                  <p className="m-0 fs-8px">Shatavari</p>
+                </div>
+                <div className="col p-0 text-center">
+                  <img src="https://img.pikbest.com/png-images/20241225/a-green-aloe-vera-plant-with-spiky-leaves-on-a-white-transparent-png-background_11301626.png!sw800" className="border rounded-circle" alt="" style={{width: "25px", objectFit: "cover", aspectRatio: "1", padding:"2px"}}/> <br />
+                  <p className="m-0 fs-8px">Ashawgandha</p>
+                </div>
+              </div>
+              <hr className="m-2" />
+              <p className="text-center m-0 fs-10px">More Details <FontAwesomeIcon icon={faAnglesRight} /></p>
+            </div>
+          </div>
+          <div className="col-md-3 col-sm-4 col-6 px-1">
+            <div className="card p-1 h-100">
+              <p className="m-1 fs-10px">
+                <span className="bg-secondary rounded-1 px-2 text-white"><FontAwesomeIcon icon={faDrupal} /> Dermatology</span>
+                <span className="bg-warning rounded-1 px-2 float-end">Must Have</span>
+              </p>
+              <p className="m-0 text-center">
+                <img src="//traya.health/cdn/shop/files/intro_fa3e6c14-b12f-4092-a7fc-c7107a267682.webp?v=1747808561&width=533" alt="Product" style={{width: "100%", minHeight: "180px", objectFit: "cover", aspectRatio: "1"}} />
+              </p>
+              <div style={{height: "4rem"}}>
+                <p className="small text-center m-0 fw-medium">ANTI-DANDRUFF SHAMPOO</p>
+                <p className="small text-center "><del className="fs-10px">₹300</del> <span className="fw-medium">₹281</span></p>
+              </div>
+              <p className="m-0 fs-10px text-center px-3">
+                made with anti-fungal ingredients to get rid of dandruff of all types
+              </p>
+              <hr className="m-2" />
+              <div className="d-flex px-2 overflow-hidden">
+                <div className="col p-0 text-center">
+                  <img src="https://img.pikbest.com/png-images/20241225/a-green-aloe-vera-plant-with-spiky-leaves-on-a-white-transparent-png-background_11301626.png!sw800" className="border rounded-circle" alt="" style={{width: "25px", objectFit: "cover", aspectRatio: "1", padding:"2px"}}/> <br />
+                  <p className="m-0 fs-8px">Amla</p>
+                </div>
+                <div className="col p-0 text-center">
+                  <img src="https://img.pikbest.com/png-images/20241225/a-green-aloe-vera-plant-with-spiky-leaves-on-a-white-transparent-png-background_11301626.png!sw800" className="border rounded-circle" alt="" style={{width: "25px", objectFit: "cover", aspectRatio: "1", padding:"2px"}}/> <br />
+                  <p className="m-0 fs-8px">Bhringraj</p>
+                </div>
+                <div className="col p-0 text-center">
+                  <img src="https://img.pikbest.com/png-images/20241225/a-green-aloe-vera-plant-with-spiky-leaves-on-a-white-transparent-png-background_11301626.png!sw800" className="border rounded-circle" alt="" style={{width: "25px", objectFit: "cover", aspectRatio: "1", padding:"2px"}}/> <br />
+                  <p className="m-0 fs-8px">Shatavari</p>
+                </div>
+                <div className="col p-0 text-center">
+                  <img src="https://img.pikbest.com/png-images/20241225/a-green-aloe-vera-plant-with-spiky-leaves-on-a-white-transparent-png-background_11301626.png!sw800" className="border rounded-circle" alt="" style={{width: "25px", objectFit: "cover", aspectRatio: "1", padding:"2px"}}/> <br />
+                  <p className="m-0 fs-8px">Ashawgandha</p>
+                </div>
+              </div>
+              <hr className="m-2" />
+              <p className="text-center m-0 fs-10px">More Details <FontAwesomeIcon icon={faAnglesRight} /></p>
+            </div>
+          </div>
+          <div className="col-md-3 col-sm-4 col-6 px-1">
+            <div className="card p-1 h-100">
+              <p className="m-1 fs-10px">
+                <span className="bg-secondary rounded-1 px-2 text-white"><FontAwesomeIcon icon={faDrupal} /> Dermatology</span>
+                <span className="bg-warning rounded-1 px-2 float-end">Must Have</span>
+              </p>
+              <p className="m-0 text-center">
+                <img src="//traya.health/cdn/shop/files/intro_c3510976-4f2b-410a-8a3b-30ac079db6a1.webp?v=1736228295&width=533" alt="Product" style={{width: "100%", minHeight: "180px", objectFit: "cover", aspectRatio: "1"}} />
+              </p>
+              <div style={{height: "4rem"}}>
+                <p className="small text-center m-0 fw-medium">HAIR RAS</p>
+                <p className="small text-center ">
+                  <del className="fs-10px">₹520</del> &nbsp;
+                  <span className="10w-medium">₹488</span>
+                </p>
+              </div>
+              <p className="m-0 fs-10px text-center px-3">
+                Better hair quality & delayed greying with herbs like shatavari and bhringraj
+              </p>
+              <hr className="m-2" />
+              <div className="d-flex px-2 overflow-hidden">
+                <div className="col p-0 text-center">
+                  <img src="https://img.pikbest.com/png-images/20241225/a-green-aloe-vera-plant-with-spiky-leaves-on-a-white-transparent-png-background_11301626.png!sw800" className="border rounded-circle" alt="" style={{width: "25px", objectFit: "cover", aspectRatio: "1", padding:"2px"}}/> <br />
+                  <p className="m-0 fs-8px">Amla</p>
+                </div>
+                <div className="col p-0 text-center">
+                  <img src="https://img.pikbest.com/png-images/20241225/a-green-aloe-vera-plant-with-spiky-leaves-on-a-white-transparent-png-background_11301626.png!sw800" className="border rounded-circle" alt="" style={{width: "25px", objectFit: "cover", aspectRatio: "1", padding:"2px"}}/> <br />
+                  <p className="m-0 fs-8px">Bhringraj</p>
+                </div>
+                <div className="col p-0 text-center">
+                  <img src="https://img.pikbest.com/png-images/20241225/a-green-aloe-vera-plant-with-spiky-leaves-on-a-white-transparent-png-background_11301626.png!sw800" className="border rounded-circle" alt="" style={{width: "25px", objectFit: "cover", aspectRatio: "1", padding:"2px"}}/> <br />
+                  <p className="m-0 fs-8px">Shatavari</p>
+                </div>
+                <div className="col p-0 text-center">
+                  <img src="https://img.pikbest.com/png-images/20241225/a-green-aloe-vera-plant-with-spiky-leaves-on-a-white-transparent-png-background_11301626.png!sw800" className="border rounded-circle" alt="" style={{width: "25px", objectFit: "cover", aspectRatio: "1", padding:"2px"}}/> <br />
+                  <p className="m-0 fs-8px">Ashawgandha</p>
+                </div>
+              </div>
+              <hr className="m-2" />
+              <p className="text-center m-0 fs-10px">More Details <FontAwesomeIcon icon={faAnglesRight} /></p>
+            </div>
+          </div>
+          <div className="col-md-3 col-sm-4 col-6 px-1">
+            <div className="card p-1 h-100">
+              <p className="m-1 fs-10px">
+                <span className="bg-secondary rounded-1 px-2 text-white"><FontAwesomeIcon icon={faDrupal} /> Dermatology</span>
+                <span className="bg-warning rounded-1 px-2 float-end">Must Have</span>
+              </p>
+              <p className="m-0 text-center">
+                <img src="//traya.health/cdn/shop/files/intro_974b046a-80d3-47fe-b2d7-45c21617f988.webp?v=1728627170&width=533" alt="Product" style={{width: "100%", minHeight: "180px", objectFit: "cover", aspectRatio: "1"}} />
+              </p>
+              <div style={{height: "4rem"}}>
+                <p className="small text-center m-0 fw-medium">ANTI-DANDRUFF SHAMPOO</p>
+                <p className="small text-center "><del className="fs-10px">₹300</del> <span className="fw-medium">₹281</span></p>
+              </div>
+              <p className="m-0 fs-10px text-center px-3">
+                made with anti-fungal ingredients to get rid of dandruff of all types
+              </p>
+              <hr className="m-2" />
+              <div className="d-flex px-2 overflow-hidden">
+                <div className="col p-0 text-center">
+                  <img src="https://img.pikbest.com/png-images/20241225/a-green-aloe-vera-plant-with-spiky-leaves-on-a-white-transparent-png-background_11301626.png!sw800" className="border rounded-circle" alt="" style={{width: "25px", objectFit: "cover", aspectRatio: "1", padding:"2px"}}/> <br />
+                  <p className="m-0 fs-8px">Amla</p>
+                </div>
+                <div className="col p-0 text-center">
+                  <img src="https://img.pikbest.com/png-images/20241225/a-green-aloe-vera-plant-with-spiky-leaves-on-a-white-transparent-png-background_11301626.png!sw800" className="border rounded-circle" alt="" style={{width: "25px", objectFit: "cover", aspectRatio: "1", padding:"2px"}}/> <br />
+                  <p className="m-0 fs-8px">Bhringraj</p>
+                </div>
+                <div className="col p-0 text-center">
+                  <img src="https://img.pikbest.com/png-images/20241225/a-green-aloe-vera-plant-with-spiky-leaves-on-a-white-transparent-png-background_11301626.png!sw800" className="border rounded-circle" alt="" style={{width: "25px", objectFit: "cover", aspectRatio: "1", padding:"2px"}}/> <br />
+                  <p className="m-0 fs-8px">Shatavari</p>
+                </div>
+                <div className="col p-0 text-center">
+                  <img src="https://img.pikbest.com/png-images/20241225/a-green-aloe-vera-plant-with-spiky-leaves-on-a-white-transparent-png-background_11301626.png!sw800" className="border rounded-circle" alt="" style={{width: "25px", objectFit: "cover", aspectRatio: "1", padding:"2px"}}/> <br />
+                  <p className="m-0 fs-8px">Ashawgandha</p>
+                </div>
+              </div>
+              <hr className="m-2" />
+              <p className="text-center m-0 fs-10px">More Details <FontAwesomeIcon icon={faAnglesRight} /></p>
+            </div>
+          </div>
+          <div className="col-md-3 col-sm-4 col-6 px-1">
+            <div className="card p-1 h-100">
+              <p className="m-1 fs-10px">
+                <span className="bg-secondary rounded-1 px-2 text-white"><FontAwesomeIcon icon={faDrupal} /> Dermatology</span>
+                <span className="bg-warning rounded-1 px-2 float-end">Must Have</span>
+              </p>
+              <p className="m-0 text-center">
+                <img src="//traya.health/cdn/shop/files/intro_b0d23409-384d-4c38-9d36-e634322b9811.webp?v=1728625862&width=533" alt="Product" style={{width: "100%", minHeight: "180px", objectFit: "cover", aspectRatio: "1"}} />
+              </p>
+              <div style={{height: "4rem"}}>
+                <p className="small text-center m-0 fw-medium">ANTI-DANDRUFF SHAMPOO</p>
+                <p className="small text-center "><del className="fs-10px">₹300</del> <span className="fw-medium">₹281</span></p>
+              </div>
+              <p className="m-0 fs-10px text-center px-3">
+                made with anti-fungal ingredients to get rid of dandruff of all types
+              </p>
+              <hr className="m-2" />
+              <div className="d-flex px-2 overflow-hidden">
+                <div className="col p-0 text-center">
+                  <img src="https://img.pikbest.com/png-images/20241225/a-green-aloe-vera-plant-with-spiky-leaves-on-a-white-transparent-png-background_11301626.png!sw800" className="border rounded-circle" alt="" style={{width: "25px", objectFit: "cover", aspectRatio: "1", padding:"2px"}}/> <br />
+                  <p className="m-0 fs-8px">Amla</p>
+                </div>
+                <div className="col p-0 text-center">
+                  <img src="https://img.pikbest.com/png-images/20241225/a-green-aloe-vera-plant-with-spiky-leaves-on-a-white-transparent-png-background_11301626.png!sw800" className="border rounded-circle" alt="" style={{width: "25px", objectFit: "cover", aspectRatio: "1", padding:"2px"}}/> <br />
+                  <p className="m-0 fs-8px">Bhringraj</p>
+                </div>
+                <div className="col p-0 text-center">
+                  <img src="https://img.pikbest.com/png-images/20241225/a-green-aloe-vera-plant-with-spiky-leaves-on-a-white-transparent-png-background_11301626.png!sw800" className="border rounded-circle" alt="" style={{width: "25px", objectFit: "cover", aspectRatio: "1", padding:"2px"}}/> <br />
+                  <p className="m-0 fs-8px">Shatavari</p>
+                </div>
+                <div className="col p-0 text-center">
+                  <img src="https://img.pikbest.com/png-images/20241225/a-green-aloe-vera-plant-with-spiky-leaves-on-a-white-transparent-png-background_11301626.png!sw800" className="border rounded-circle" alt="" style={{width: "25px", objectFit: "cover", aspectRatio: "1", padding:"2px"}}/> <br />
+                  <p className="m-0 fs-8px">Ashawgandha</p>
+                </div>
+              </div>
+              <hr className="m-2" />
+              <p className="text-center m-0 fs-10px">More Details <FontAwesomeIcon icon={faAnglesRight} /></p>
+            </div>
+          </div>
+        </div>
+      </div>
 
       {/* Stats Section */}
       <style>{`
@@ -196,31 +296,31 @@ const HomePage = () => {
           box-shadow: 0 5px 10px rgba(0,0,0,0.1);
         }
       `}</style>
-      <section className="py-5 px-3">
+      <section className="pb-5 px-3">
         <div className="container">
           <div className="row">
             <div className="col-md-3 col-6 mb-3">
-              <div className="stat-card bg-purple-light text-center p-3 rounded-4">
-                <div className="fw-bold text-purple fs-1">8L+</div>
-                <div className="fw-bold fs-6 text-muted">Happy Customers</div>
+              <div className="stat-card text-white bg-purple text-center p-3 rounded-4">
+                <div className="fw-bold fs-1">8L+</div>
+                <div className="fw-bold fs-6">Happy Customers</div>
               </div>
             </div>
             <div className="col-md-3 col-6 mb-3">
-              <div className="stat-card bg-purple-light text-center p-3 rounded-4">
-                <div className="fw-bold text-purple fs-1">93%</div>
-                <div className="fw-bold fs-6 text-muted">Saw Results</div>
+              <div className="stat-card text-white bg-purple text-center p-3 rounded-4">
+                <div className="fw-bold fs-1">93%</div>
+                <div className="fw-bold fs-6">Saw Results</div>
               </div>
             </div>
             <div className="col-md-3 col-6">
-              <div className="stat-card bg-purple-light text-center p-3 rounded-4">
-                <div className="fw-bold text-purple fs-1">70+</div>
-                <div className="fw-bold fs-6 text-muted">Hair Experts</div>
+              <div className="stat-card text-white bg-purple text-center p-3 rounded-4">
+                <div className="fw-bold fs-1">70+</div>
+                <div className="fw-bold fs-6">Hair Experts</div>
               </div>
             </div>
             <div className="col-md-3 col-6">
-              <div className="stat-card bg-purple-light text-center p-3 rounded-4">
-                <div className="fw-bold text-purple fs-1">100%</div>
-                <div className="fw-bold fs-6 text-muted">Natural Formula</div>
+              <div className="stat-card text-white bg-purple text-center p-3 rounded-4">
+                <div className="fw-bold fs-1">100%</div>
+                <div className="fw-bold fs-6">Natural Formula</div>
               </div>
             </div>
           </div>
@@ -319,7 +419,7 @@ const HomePage = () => {
       <section className="py-5 px-3 bg-purple">
         <div className="container">
           <div className="text-center">
-            <div className="d-inline-block rounded-pill px-4 py-2 mb-3 fw-medium bg-purple-light text-dark">OUR UNIQUE APPROACH</div>
+            <div className="d-inline-block rounded-pill px-4 py-2 mb-3 fw-medium bg-purple-light text-white">OUR UNIQUE APPROACH</div>
             <h2 className="section-title">
               Traya's Holistic 3 Science Formula
             </h2>
@@ -355,8 +455,8 @@ const HomePage = () => {
           </p>
           
           <div className="row">
-            <div className="col-md-6">
-              <div className="card rounded-4 mb-3 testimonial-card border-purple">
+            <div className="col-md-6 mb-3">
+              <div className="card rounded-4 testimonial-card border-purple h-100">
                 <div className="text-danger">★★★★★</div>
                 <p className="fst-italic">
                   "I was skeptical at first, but after 5 months on Traya's plan, I can see visible regrowth. 
@@ -366,8 +466,8 @@ const HomePage = () => {
               </div>
             </div>
             
-            <div className="col-md-6">
-              <div className="card rounded-4 mb-3 testimonial-card border-purple">
+            <div className="col-md-6 mb-3">
+              <div className="card rounded-4 testimonial-card border-purple h-100">
                 <div className="text-danger">★★★★★</div>
                 <p className="fst-italic">
                   "Finally found a solution that addresses the root cause. My hair fall has reduced by 80% 
@@ -379,8 +479,8 @@ const HomePage = () => {
           </div>
           
           <div className="row">
-            <div className="col-md-6">
-              <div className="card rounded-4 mb-3 testimonial-card border-purple">
+            <div className="col-md-6 mb-3">
+              <div className="card rounded-4 testimonial-card border-purple h-100">
                 <div className="text-danger">★★★★★</div>
                 <p className="fst-italic">
                   "The holistic approach is what sets Traya apart. It's not just about applying products, 
@@ -390,8 +490,8 @@ const HomePage = () => {
               </div>
             </div>
             
-            <div className="col-md-6">
-              <div className="card rounded-4 mb-3 testimonial-card border-purple">
+            <div className="col-md-6 mb-3">
+              <div className="card rounded-4 testimonial-card border-purple h-100">
                 <div className="text-danger">★★★★★</div>
                 <p className="fst-italic">
                   "Women Santulan has been a game-changer for me. My hair is thicker, healthier, and I've 
@@ -404,44 +504,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="bg-purple-light py-5"> 
-        <div className="container">
-          <div className="cta-box">
-            <h2 className="section-title" style={{marginBottom: '20px'}}>Start Your Hair Growth Journey Today</h2>
-            <p style={{fontSize: '18px', color: '#666', marginBottom: '30px'}}>
-              Take our free hair test to get your personalized treatment plan
-            </p>
-            
-            <div className="gender-toggle">
-              <button 
-                className={`gender-btn ${selectedGender === 'male' ? 'active' : ''}`}
-                onClick={() => setSelectedGender('male')}
-              >
-                For Men
-              </button>
-              <button 
-                className={`gender-btn ${selectedGender === 'female' ? 'active' : ''}`}
-                onClick={() => setSelectedGender('female')}
-              >
-                For Women
-              </button>
-            </div>
-            
-            <div className="text-purple fs-1 fw-bold">
-              Starting at {selectedGender === 'male' ? '₹1,699' : '₹2,000'}/month*
-            </div>
-            
-            <button className="btn btn-purple mt-3 rounded-pill btn-lg">Take Free Hair Test Now</button>
-            
-            <p style={{fontSize: '12px', color: '#999', marginTop: '20px'}}>
-              *Price based on Stage 1 hair fall. Actual price may vary based on your personalized assessment
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <div className="container-fluid pb-0 overflow-hidden">
+      <div className="d-none container-fluid pb-0 overflow-hidden">
         <div className="row bg-purple">
           <div className="col-12 pt-3">
             <div className="container">
@@ -481,207 +544,7 @@ const HomePage = () => {
         </div>
       </div>
 
-      <div className="container">
-        <h6 className="py-3">1 Month Customised Kit - (6 products)</h6>
-        <div className="d-flex overflow-x-auto pb-2">
-          <div className="col-md-3 col-sm-4 col-6 px-1">
-            <div className="card p-1 h-100">
-              <p className="m-0 fs-8px">
-                <span className="bg-secondary rounded-1 px-2 text-white"><FontAwesomeIcon icon={faDrupal} /> Dermatology</span>
-                <span className="bg-warning rounded-1 px-2 float-end">Must Have</span>
-              </p>
-              <p className="m-0 text-center">
-                <img src="https://traya.health/cdn/shop/files/intro_9c482754-9edc-49d1-b2a0-31628d1a9b1a.webp?v=1758484918&width=533" alt="Product" style={{width: "100%", height: "180px", objectFit: "cover"}} />
-              </p>
-              <div style={{height: "4rem"}}>
-                <p className="small text-center m-0 fw-medium">ANTI-DANDRUFF SHAMPOO</p>
-                <p className="small text-center "><del className="fs-10px">₹300</del> <span className="fw-medium">₹281</span></p>
-              </div>
-              <p className="m-0 fs-8px text-center px-3">
-                made with anti-fungal ingredients to get rid of dandruff of all types
-              </p>
-              <hr className="m-2" />
-              <div className="d-flex px-2 overflow-hidden">
-                <div className="col p-0 text-center">
-                  <img src="https://img.pikbest.com/png-images/20241225/a-green-aloe-vera-plant-with-spiky-leaves-on-a-white-transparent-png-background_11301626.png!sw800" className="border rounded-circle" alt="" style={{width: "20px", objectFit: "cover", aspectRatio: "1", padding:"2px"}}/> <br />
-                  <p className="m-0 fs-5px">Bhringraj</p>
-                </div>
-                <div className="col p-0 text-center">
-                  <img src="https://img.pikbest.com/png-images/20241225/a-green-aloe-vera-plant-with-spiky-leaves-on-a-white-transparent-png-background_11301626.png!sw800" className="border rounded-circle" alt="" style={{width: "20px", objectFit: "cover", aspectRatio: "1", padding:"2px"}}/> <br />
-                  <p className="m-0 fs-5px">Shatavari</p>
-                </div>
-                <div className="col p-0 text-center">
-                  <img src="https://img.pikbest.com/png-images/20241225/a-green-aloe-vera-plant-with-spiky-leaves-on-a-white-transparent-png-background_11301626.png!sw800" className="border rounded-circle" alt="" style={{width: "20px", objectFit: "cover", aspectRatio: "1", padding:"2px"}}/> <br />
-                  <p className="m-0 fs-5px">Ashawgandha</p>
-                </div>
-              </div>
-              <hr className="m-2" />
-              <p className="text-center m-0 fs-10px">More Details <FontAwesomeIcon icon={faAnglesRight} /></p>
-            </div>
-          </div>
-          <div className="col-md-3 col-sm-4 col-6 px-1">
-            <div className="card p-1 h-100">
-              <p className="m-0 fs-8px">
-                <span className="bg-secondary rounded-1 px-2 text-white"><FontAwesomeIcon icon={faDrupal} /> Dermatology</span>
-                <span className="bg-warning rounded-1 px-2 float-end">Must Have</span>
-              </p>
-              <p className="m-0 text-center">
-                <img src="//traya.health/cdn/shop/files/intro_fa3e6c14-b12f-4092-a7fc-c7107a267682.webp?v=1747808561&width=533" alt="Product" style={{width: "100%", height: "180px", objectFit: "cover"}} />
-              </p>
-              <div style={{height: "4rem"}}>
-                <p className="small text-center m-0 fw-medium">ANTI-DANDRUFF SHAMPOO</p>
-                <p className="small text-center "><del className="fs-10px">₹300</del> <span className="fw-medium">₹281</span></p>
-              </div>
-              <p className="m-0 fs-8px text-center px-3">
-                made with anti-fungal ingredients to get rid of dandruff of all types
-              </p>
-              <hr className="m-2" />
-              <div className="d-flex px-2 overflow-hidden">
-                <div className="col p-0 text-center">
-                  <img src="https://img.pikbest.com/png-images/20241225/a-green-aloe-vera-plant-with-spiky-leaves-on-a-white-transparent-png-background_11301626.png!sw800" className="border rounded-circle" alt="" style={{width: "20px", objectFit: "cover", aspectRatio: "1", padding:"2px"}}/> <br />
-                  <p className="m-0 fs-5px">Amla</p>
-                </div>
-                <div className="col p-0 text-center">
-                  <img src="https://img.pikbest.com/png-images/20241225/a-green-aloe-vera-plant-with-spiky-leaves-on-a-white-transparent-png-background_11301626.png!sw800" className="border rounded-circle" alt="" style={{width: "20px", objectFit: "cover", aspectRatio: "1", padding:"2px"}}/> <br />
-                  <p className="m-0 fs-5px">Bhringraj</p>
-                </div>
-                <div className="col p-0 text-center">
-                  <img src="https://img.pikbest.com/png-images/20241225/a-green-aloe-vera-plant-with-spiky-leaves-on-a-white-transparent-png-background_11301626.png!sw800" className="border rounded-circle" alt="" style={{width: "20px", objectFit: "cover", aspectRatio: "1", padding:"2px"}}/> <br />
-                  <p className="m-0 fs-5px">Shatavari</p>
-                </div>
-                <div className="col p-0 text-center">
-                  <img src="https://img.pikbest.com/png-images/20241225/a-green-aloe-vera-plant-with-spiky-leaves-on-a-white-transparent-png-background_11301626.png!sw800" className="border rounded-circle" alt="" style={{width: "20px", objectFit: "cover", aspectRatio: "1", padding:"2px"}}/> <br />
-                  <p className="m-0 fs-5px">Ashawgandha</p>
-                </div>
-              </div>
-              <hr className="m-2" />
-              <p className="text-center m-0 fs-10px">More Details <FontAwesomeIcon icon={faAnglesRight} /></p>
-            </div>
-          </div>
-          <div className="col-md-3 col-sm-4 col-6 px-1">
-            <div className="card p-1 h-100">
-              <p className="m-0 fs-8px">
-                <span className="bg-secondary rounded-1 px-2 text-white"><FontAwesomeIcon icon={faDrupal} /> Dermatology</span>
-                <span className="bg-warning rounded-1 px-2 float-end">Must Have</span>
-              </p>
-              <p className="m-0 text-center">
-                <img src="//traya.health/cdn/shop/files/intro_c3510976-4f2b-410a-8a3b-30ac079db6a1.webp?v=1736228295&width=533" alt="Product" style={{width: "100%", height: "180px", objectFit: "cover"}} />
-              </p>
-              <div style={{height: "4rem"}}>
-                <p className="small text-center m-0 fw-medium">HAIR RAS</p>
-                <p className="small text-center ">
-                  <del className="fs-10px">₹520</del> &nbsp;
-                  <span className="fw-medium">₹488</span>
-                </p>
-              </div>
-              <p className="m-0 fs-8px text-center px-3">
-                Better hair quality & delayed greying with herbs like shatavari and bhringraj
-              </p>
-              <hr className="m-2" />
-              <div className="d-flex px-2 overflow-hidden">
-                <div className="col p-0 text-center">
-                  <img src="https://img.pikbest.com/png-images/20241225/a-green-aloe-vera-plant-with-spiky-leaves-on-a-white-transparent-png-background_11301626.png!sw800" className="border rounded-circle" alt="" style={{width: "20px", objectFit: "cover", aspectRatio: "1", padding:"2px"}}/> <br />
-                  <p className="m-0 fs-5px">Amla</p>
-                </div>
-                <div className="col p-0 text-center">
-                  <img src="https://img.pikbest.com/png-images/20241225/a-green-aloe-vera-plant-with-spiky-leaves-on-a-white-transparent-png-background_11301626.png!sw800" className="border rounded-circle" alt="" style={{width: "20px", objectFit: "cover", aspectRatio: "1", padding:"2px"}}/> <br />
-                  <p className="m-0 fs-5px">Bhringraj</p>
-                </div>
-                <div className="col p-0 text-center">
-                  <img src="https://img.pikbest.com/png-images/20241225/a-green-aloe-vera-plant-with-spiky-leaves-on-a-white-transparent-png-background_11301626.png!sw800" className="border rounded-circle" alt="" style={{width: "20px", objectFit: "cover", aspectRatio: "1", padding:"2px"}}/> <br />
-                  <p className="m-0 fs-5px">Shatavari</p>
-                </div>
-                <div className="col p-0 text-center">
-                  <img src="https://img.pikbest.com/png-images/20241225/a-green-aloe-vera-plant-with-spiky-leaves-on-a-white-transparent-png-background_11301626.png!sw800" className="border rounded-circle" alt="" style={{width: "20px", objectFit: "cover", aspectRatio: "1", padding:"2px"}}/> <br />
-                  <p className="m-0 fs-5px">Ashawgandha</p>
-                </div>
-              </div>
-              <hr className="m-2" />
-              <p className="text-center m-0 fs-10px">More Details <FontAwesomeIcon icon={faAnglesRight} /></p>
-            </div>
-          </div>
-          <div className="col-md-3 col-sm-4 col-6 px-1">
-            <div className="card p-1 h-100">
-              <p className="m-0 fs-8px">
-                <span className="bg-secondary rounded-1 px-2 text-white"><FontAwesomeIcon icon={faDrupal} /> Dermatology</span>
-                <span className="bg-warning rounded-1 px-2 float-end">Must Have</span>
-              </p>
-              <p className="m-0 text-center">
-                <img src="//traya.health/cdn/shop/files/intro_974b046a-80d3-47fe-b2d7-45c21617f988.webp?v=1728627170&width=533" alt="Product" style={{width: "100%", height: "180px", objectFit: "cover"}} />
-              </p>
-              <div style={{height: "4rem"}}>
-                <p className="small text-center m-0 fw-medium">ANTI-DANDRUFF SHAMPOO</p>
-                <p className="small text-center "><del className="fs-10px">₹300</del> <span className="fw-medium">₹281</span></p>
-              </div>
-              <p className="m-0 fs-8px text-center px-3">
-                made with anti-fungal ingredients to get rid of dandruff of all types
-              </p>
-              <hr className="m-2" />
-              <div className="d-flex px-2 overflow-hidden">
-                <div className="col p-0 text-center">
-                  <img src="https://img.pikbest.com/png-images/20241225/a-green-aloe-vera-plant-with-spiky-leaves-on-a-white-transparent-png-background_11301626.png!sw800" className="border rounded-circle" alt="" style={{width: "20px", objectFit: "cover", aspectRatio: "1", padding:"2px"}}/> <br />
-                  <p className="m-0 fs-5px">Amla</p>
-                </div>
-                <div className="col p-0 text-center">
-                  <img src="https://img.pikbest.com/png-images/20241225/a-green-aloe-vera-plant-with-spiky-leaves-on-a-white-transparent-png-background_11301626.png!sw800" className="border rounded-circle" alt="" style={{width: "20px", objectFit: "cover", aspectRatio: "1", padding:"2px"}}/> <br />
-                  <p className="m-0 fs-5px">Bhringraj</p>
-                </div>
-                <div className="col p-0 text-center">
-                  <img src="https://img.pikbest.com/png-images/20241225/a-green-aloe-vera-plant-with-spiky-leaves-on-a-white-transparent-png-background_11301626.png!sw800" className="border rounded-circle" alt="" style={{width: "20px", objectFit: "cover", aspectRatio: "1", padding:"2px"}}/> <br />
-                  <p className="m-0 fs-5px">Shatavari</p>
-                </div>
-                <div className="col p-0 text-center">
-                  <img src="https://img.pikbest.com/png-images/20241225/a-green-aloe-vera-plant-with-spiky-leaves-on-a-white-transparent-png-background_11301626.png!sw800" className="border rounded-circle" alt="" style={{width: "20px", objectFit: "cover", aspectRatio: "1", padding:"2px"}}/> <br />
-                  <p className="m-0 fs-5px">Ashawgandha</p>
-                </div>
-              </div>
-              <hr className="m-2" />
-              <p className="text-center m-0 fs-10px">More Details <FontAwesomeIcon icon={faAnglesRight} /></p>
-            </div>
-          </div>
-          <div className="col-md-3 col-sm-4 col-6 px-1">
-            <div className="card p-1 h-100">
-              <p className="m-0 fs-8px">
-                <span className="bg-secondary rounded-1 px-2 text-white"><FontAwesomeIcon icon={faDrupal} /> Dermatology</span>
-                <span className="bg-warning rounded-1 px-2 float-end">Must Have</span>
-              </p>
-              <p className="m-0 text-center">
-                <img src="//traya.health/cdn/shop/files/intro_b0d23409-384d-4c38-9d36-e634322b9811.webp?v=1728625862&width=533" alt="Product" style={{width: "100%", height: "180px", objectFit: "cover"}} />
-              </p>
-              <div style={{height: "4rem"}}>
-                <p className="small text-center m-0 fw-medium">ANTI-DANDRUFF SHAMPOO</p>
-                <p className="small text-center "><del className="fs-10px">₹300</del> <span className="fw-medium">₹281</span></p>
-              </div>
-              <p className="m-0 fs-8px text-center px-3">
-                made with anti-fungal ingredients to get rid of dandruff of all types
-              </p>
-              <hr className="m-2" />
-              <div className="d-flex px-2 overflow-hidden">
-                <div className="col p-0 text-center">
-                  <img src="https://img.pikbest.com/png-images/20241225/a-green-aloe-vera-plant-with-spiky-leaves-on-a-white-transparent-png-background_11301626.png!sw800" className="border rounded-circle" alt="" style={{width: "20px", objectFit: "cover", aspectRatio: "1", padding:"2px"}}/> <br />
-                  <p className="m-0 fs-5px">Amla</p>
-                </div>
-                <div className="col p-0 text-center">
-                  <img src="https://img.pikbest.com/png-images/20241225/a-green-aloe-vera-plant-with-spiky-leaves-on-a-white-transparent-png-background_11301626.png!sw800" className="border rounded-circle" alt="" style={{width: "20px", objectFit: "cover", aspectRatio: "1", padding:"2px"}}/> <br />
-                  <p className="m-0 fs-5px">Bhringraj</p>
-                </div>
-                <div className="col p-0 text-center">
-                  <img src="https://img.pikbest.com/png-images/20241225/a-green-aloe-vera-plant-with-spiky-leaves-on-a-white-transparent-png-background_11301626.png!sw800" className="border rounded-circle" alt="" style={{width: "20px", objectFit: "cover", aspectRatio: "1", padding:"2px"}}/> <br />
-                  <p className="m-0 fs-5px">Shatavari</p>
-                </div>
-                <div className="col p-0 text-center">
-                  <img src="https://img.pikbest.com/png-images/20241225/a-green-aloe-vera-plant-with-spiky-leaves-on-a-white-transparent-png-background_11301626.png!sw800" className="border rounded-circle" alt="" style={{width: "20px", objectFit: "cover", aspectRatio: "1", padding:"2px"}}/> <br />
-                  <p className="m-0 fs-5px">Ashawgandha</p>
-                </div>
-              </div>
-              <hr className="m-2" />
-              <p className="text-center m-0 fs-10px">More Details <FontAwesomeIcon icon={faAnglesRight} /></p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="container py-4">
+      <div className="d-none container py-4">
         <h6 className="fw-bold">Your Hair Growth Journey</h6>
         <div className="card p-3">
 
@@ -730,7 +593,7 @@ const HomePage = () => {
         </div>
       </div>
 
-      <div className="container py-4">
+      <div className="d-none container py-4">
         <h6 className="fw-bold">Traya Plan Includes</h6>
         <div className="row">
           <div className="col-1"></div>
@@ -767,7 +630,7 @@ const HomePage = () => {
               <div className="card p-3">
                 <div className="row">
                   <div className="col-3">
-                    <FontAwesomeIcon icon={fa1} className="text-warning" style={{ fontSize: "60px" }} />
+                    <FontAwesomeIcon icon={fa1} className="text-purple" style={{ fontSize: "60px" }} />
                   </div>
                   <div className="col pt-3">
                     <h4>Connect with a hair Coach</h4>
@@ -782,7 +645,7 @@ const HomePage = () => {
               <div className="card p-3">
                 <div className="row">
                   <div className="col-3">
-                    <FontAwesomeIcon icon={fa2} className="text-warning" style={{ fontSize: "60px" }} />
+                    <FontAwesomeIcon icon={fa2} className="text-purple" style={{ fontSize: "60px" }} />
                   </div>
                   <div className="col pt-3">
                     <h4>Review Your Hair Profile</h4>
@@ -797,7 +660,7 @@ const HomePage = () => {
               <div className="card p-3">
                 <div className="row">
                   <div className="col-3">
-                    <FontAwesomeIcon icon={fa3} className="text-warning" style={{ fontSize: "60px" }} />
+                    <FontAwesomeIcon icon={fa3} className="text-purple" style={{ fontSize: "60px" }} />
                   </div>
                   <div className="col pt-3">
                     <h4>Start Your Journey</h4>
@@ -818,7 +681,7 @@ const HomePage = () => {
               <div className="card p-3">
                 <div className="row">
                   <div className="col-3">
-                    <FontAwesomeIcon icon={fa1} className="text-warning" style={{ fontSize: "60px" }} />
+                    <FontAwesomeIcon icon={fa1} className="text-purple" style={{ fontSize: "60px" }} />
                   </div>
                   <div className="col pt-3">
                     <h4>Connect with a hair Coach</h4>
@@ -834,7 +697,7 @@ const HomePage = () => {
               <div className="card p-3">
                 <div className="row">
                   <div className="col-3">
-                    <FontAwesomeIcon icon={fa2} className="text-warning" style={{ fontSize: "60px" }} />
+                    <FontAwesomeIcon icon={fa2} className="text-purple" style={{ fontSize: "60px" }} />
                   </div>
                   <div className="col pt-3">
                     <h4>Review Your Hair Profile</h4>
@@ -850,7 +713,7 @@ const HomePage = () => {
               <div className="card p-3">
                 <div className="row">
                   <div className="col-3">
-                    <FontAwesomeIcon icon={fa3} className="text-warning" style={{ fontSize: "60px" }} />
+                    <FontAwesomeIcon icon={fa3} className="text-purple" style={{ fontSize: "60px" }} />
                   </div>
                   <div className="col pt-3">
                     <h4>Start Your Journey</h4>
@@ -876,46 +739,26 @@ const HomePage = () => {
 
       <div className="container py-4">
         <h6 className="fw-bold">Need Help?</h6>
-        <div className="d-flex overflow-x-auto pb-2">
-          <div className="col-md-2 col-sm-3 col-7 px-1">
-            <div className="card p-2 h-100 bg-warning">
-              <p className="m-0">
-                <FontAwesomeIcon icon={faQuestion} /> General Queries
-              </p>
+        <div className="d-flex flex-nowrap overflow-auto pb-2">
+          {[
+            "General Queries",
+            "Hair Test",
+            "Hair Coach",
+            "Diet Plan",
+            "Payments & Refunds",
+          ].map((item, index) => (
+            <div className="col px-1" key={index} style={{ minWidth: "200px" }}>
+              <div className="card p-2 h-100 bg-purple text-white text-center">
+                <p className="m-0 text-nowrap">
+                  <FontAwesomeIcon icon={faQuestion} /> {item}
+                </p>
+              </div>
             </div>
-          </div>
-          <div className="col-md-2 col-sm-3 col-7 px-1">
-            <div className="card p-2 h-100 bg-warning">
-              <p className="m-0">
-                <FontAwesomeIcon icon={faQuestion} /> Hair test
-              </p>
-            </div>
-          </div>
-          <div className="col-md-2 col-sm-3 col-7 px-1">
-            <div className="card p-2 h-100 bg-warning">
-              <p className="m-0">
-                <FontAwesomeIcon icon={faQuestion} /> Hair Coach
-              </p>
-            </div>
-          </div>
-          <div className="col-md-2 col-sm-3 col-7 px-1">
-            <div className="card p-2 h-100 bg-warning">
-              <p className="m-0">
-                <FontAwesomeIcon icon={faQuestion} /> Diet Plan
-              </p>
-            </div>
-          </div>
-          <div className="col-md-2 col-sm-3 col-7 px-1">
-            <div className="card p-2 h-100 bg-warning">
-              <p className="m-0">
-                <FontAwesomeIcon icon={faQuestion} /> Payments & Refunds
-              </p>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
 
-      <div className="container py-4">
+      <div className="d-none container py-4">
         <div className="card bg-purple rounded-3 p-2">
           <div className="row align-items-center">
             <div className="col text-white ps-3">
@@ -936,7 +779,7 @@ const HomePage = () => {
         </div>
       </div>
 
-      <div className="container py-4">
+      <div className="d-none container py-4">
         <h6 className="fw-bold">Meet Our Team Of Doctors</h6>
         
         <div className="d-flex overflow-x-auto pb-2">
@@ -1002,7 +845,7 @@ const HomePage = () => {
           </div>
         </div>
       </div>
-
+      <br /><br />
       <Footer />
     </>
   );

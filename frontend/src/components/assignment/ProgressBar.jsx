@@ -12,7 +12,7 @@ export default function ProgressBar({ progress, canPrev, onPrev, }) {
             <FontAwesomeIcon icon={faChevronLeft} className="text-purple" onClick={onPrev} disabled={!canPrev}/><br />
           </div>
           <div className="col-6 py-3 text-end">
-            <Link to="/dashboard"><FontAwesomeIcon icon={faXmark} className="text-danger"/></Link>
+            <Link to="/"><FontAwesomeIcon icon={faXmark} className="text-danger"/></Link>
           </div>
           <div className="col-12">
             <div className="progress rounded-pill" style={{height: "5px"}}>

@@ -11,29 +11,29 @@ const Footer = () => {
   return (
     <footer>
       {/* for mobile view */}
-      <nav className="navbar navbar-expand-lg navbar-light bg-white fixed-bottom shadow-lg p-0 d-sm-none">
+      <nav className="navbar navbar-expand-lg navbar-light bg-purple fixed-bottom shadow-lg p-0 d-sm-none" style={{borderTopLeftRadius: "10px", borderTopRightRadius: "10px"}}>
         <div className="container-fluid">
           <div className="row w-100 justify-content-around text-center m-0">
             <div className="col p-2">
-              <Link to="/" className={`text-decoration-none d-flex flex-column align-items-center ${ currentPath === "/" ? "text-purple" : "text-muted" }`}>
+              <Link to="/" className={`text-decoration-none d-flex flex-column align-items-center ${ currentPath === "/" ? "text-warning" : "text-light" }`}>
                 <FontAwesomeIcon icon={faHouse} />
                 <small>Home</small>
               </Link>
             </div>
             <div className="col p-2">
-              <Link to="/login" className={`text-decoration-none d-flex flex-column align-items-center ${ currentPath === "/login" ? "text-purple" : "text-muted" }`}>
+              <Link to="/login" className={`text-decoration-none d-flex flex-column align-items-center ${ currentPath === "/login" ? "text-warning" : "text-light" }`}>
                 <FontAwesomeIcon icon={faBoxOpen} />
                 <small>My Kit</small>
               </Link>
             </div>
             <div className="col p-2">
-              <Link to="/video" className={`text-decoration-none d-flex flex-column align-items-center ${ currentPath === "/video" ? "text-purple" : "text-muted" }`}>
+              <Link to="/video" className={`text-decoration-none d-flex flex-column align-items-center ${ currentPath === "/video" ? "text-warning" : "text-light" }`}>
                 <FontAwesomeIcon icon={faYoutube} />
                 <small>Video</small>
               </Link>
             </div>
             <div className="col p-2">
-              <Link to="/profile" className={`text-decoration-none d-flex flex-column align-items-center ${ currentPath === "/profile" ? "text-purple" : "text-muted" }`}>
+              <Link to="/profile" className={`text-decoration-none d-flex flex-column align-items-center ${ currentPath === "/profile" ? "text-warning" : "text-light" }`}>
                 <FontAwesomeIcon icon={faCircleUser} />
                 <small>You</small>
               </Link>
@@ -42,7 +42,7 @@ const Footer = () => {
         </div>
       </nav>
       {/* for desktop view */}
-      <div className="container-fluid bg-light pt-3 d-none d-sm-block">
+      <div className="container-fluid bg-purple-light pt-3 d-none d-sm-block">
         <div className="container">
           <div className="row"> 
             <div className="col-4 col-md-2 mb-3"> 

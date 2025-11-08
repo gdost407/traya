@@ -3,6 +3,7 @@ import toast from "react-hot-toast";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import axios from 'axios';
+import { Link } from "react-router-dom";
 
 const Phone = ({ onCheckPhone, onBack, showHeader }) => {
   const apiUrl = import.meta.env.VITE_API_URL || window.location.origin;
@@ -54,7 +55,7 @@ const Phone = ({ onCheckPhone, onBack, showHeader }) => {
     <div className="card rounded-0 shadow text-center py-5 px-4 min-vh-100 position-relative">
       <div className="card-header border-0 bg-white">
         <h2 className="mb-4 fs-6 p-2 fw-medium text-center">
-          <FontAwesomeIcon icon={faChevronLeft} onClick={onBack} className="float-start"/>
+          <Link to="/" className="float-start"><FontAwesomeIcon icon={faChevronLeft} onClick={onBack}/></Link>
           Create Account
         </h2>
       </div>

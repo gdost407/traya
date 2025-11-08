@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default function WelcomeScreen({ onStart }) {
   return (
     <div className="d-flex flex-column align-items-center text-center p-5 position-relative min-vh-100">
-      <Link to="/dashboard" className="position-absolute top-0 end-0 p-3 text-dark text-decoration-none">skip</Link>
+      <Link to="/" className="position-absolute top-0 end-0 p-3 text-dark text-decoration-none">skip</Link>
       <div className="d-none d-md-block" style={{height: "50px"}}></div>
       <div className="d-md-none" style={{height: "150px"}}></div>
       <div className="display-1 mb-4 text-purple">
