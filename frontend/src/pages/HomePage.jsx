@@ -90,7 +90,7 @@ const HomePage = () => {
       <div className="container py-5">
         <div className="d-flex overflow-x-auto pb-2">
           <div className="col-md-3 col-sm-4 col-6 px-1">
-            <div className="card p-1 h-100">
+            <div className="card p-1 h-100 border-purple">
               <p className="m-1 fs-10px">
                 <span className="bg-secondary rounded-1 px-2 text-white"><FontAwesomeIcon icon={faDrupal} /> Dermatology</span>
                 <span className="bg-warning rounded-1 px-2 float-end">Must Have</span>
@@ -125,7 +125,7 @@ const HomePage = () => {
             </div>
           </div>
           <div className="col-md-3 col-sm-4 col-6 px-1">
-            <div className="card p-1 h-100">
+            <div className="card p-1 h-100 border-purple">
               <p className="m-1 fs-10px">
                 <span className="bg-secondary rounded-1 px-2 text-white"><FontAwesomeIcon icon={faDrupal} /> Dermatology</span>
                 <span className="bg-warning rounded-1 px-2 float-end">Must Have</span>
@@ -164,7 +164,7 @@ const HomePage = () => {
             </div>
           </div>
           <div className="col-md-3 col-sm-4 col-6 px-1">
-            <div className="card p-1 h-100">
+            <div className="card p-1 h-100 border-purple">
               <p className="m-1 fs-10px">
                 <span className="bg-secondary rounded-1 px-2 text-white"><FontAwesomeIcon icon={faDrupal} /> Dermatology</span>
                 <span className="bg-warning rounded-1 px-2 float-end">Must Have</span>
@@ -206,7 +206,7 @@ const HomePage = () => {
             </div>
           </div>
           <div className="col-md-3 col-sm-4 col-6 px-1">
-            <div className="card p-1 h-100">
+            <div className="card p-1 h-100 border-purple">
               <p className="m-1 fs-10px">
                 <span className="bg-secondary rounded-1 px-2 text-white"><FontAwesomeIcon icon={faDrupal} /> Dermatology</span>
                 <span className="bg-warning rounded-1 px-2 float-end">Must Have</span>
@@ -245,7 +245,7 @@ const HomePage = () => {
             </div>
           </div>
           <div className="col-md-3 col-sm-4 col-6 px-1">
-            <div className="card p-1 h-100">
+            <div className="card p-1 h-100 border-purple">
               <p className="m-1 fs-10px">
                 <span className="bg-secondary rounded-1 px-2 text-white"><FontAwesomeIcon icon={faDrupal} /> Dermatology</span>
                 <span className="bg-warning rounded-1 px-2 float-end">Must Have</span>
@@ -351,7 +351,7 @@ const HomePage = () => {
           
           <div className="row">
             <div className="col-md-4 mb-4">
-              <div className="card rounded-4 text-center h-100">
+              <div className="card rounded-4 text-center h-100 border-purple">
                 <div className="feature-icon bg-purple">🔬</div>
                 <h3 className="fw-medium mb-3">Free Hair Test™</h3>
                 <p className="text-muted small">
@@ -361,7 +361,7 @@ const HomePage = () => {
             </div>
             
             <div className="col-md-4 mb-4">
-              <div className="card rounded-4 text-center h-100">
+              <div className="card rounded-4 text-center h-100 border-purple">
                 <div className="feature-icon bg-purple">🌿</div>
                 <h3 className="fw-medium mb-3">Customized Treatment</h3>
                 <p className="text-muted small">
@@ -371,7 +371,7 @@ const HomePage = () => {
             </div>
             
             <div className="col-md-4 mb-4">
-              <div className="card rounded-4 text-center h-100">
+              <div className="card rounded-4 text-center h-100 border-purple">
                 <div className="feature-icon bg-purple">👨‍⚕️</div>
                 <h3 className="fw-medium mb-3">Expert Guidance</h3>
                 <p className="text-muted small">
@@ -383,7 +383,7 @@ const HomePage = () => {
 
           <div className="row mt-4">
             <div className="col-md-4 mb-4">
-              <div className="card rounded-4 text-center h-100">
+              <div className="card rounded-4 text-center h-100 border-purple">
                 <div className="feature-icon bg-purple">✨</div>
                 <h3 className="fw-medium mb-3">Long-Lasting Results</h3>
                 <p className="text-muted small">
@@ -393,7 +393,7 @@ const HomePage = () => {
             </div>
             
             <div className="col-md-4 mb-4">
-              <div className="card rounded-4 text-center h-100">
+              <div className="card rounded-4 text-center h-100 border-purple">
                 <div className="feature-icon bg-purple">🏆</div>
                 <h3 className="fw-medium mb-3">Award Winning</h3>
                 <p className="text-muted small">
@@ -403,7 +403,7 @@ const HomePage = () => {
             </div>
             
             <div className="col-md-4 mb-4">
-              <div className="card rounded-4 text-center h-100">
+              <div className="card rounded-4 text-center h-100 border-purple">
                 <div className="feature-icon bg-purple">💰</div>
                 <h3 className="fw-medium mb-3">Money Back Guarantee</h3>
                 <p className="text-muted small">
@@ -627,7 +627,7 @@ const HomePage = () => {
         <div className="d-none d-lg-block">
           <div className="row g-3">
             <div className="col-lg-4">
-              <div className="card p-3">
+              <div className="card p-3 border-purple">
                 <div className="row">
                   <div className="col-3">
                     <FontAwesomeIcon icon={fa1} className="text-purple" style={{ fontSize: "60px" }} />
@@ -642,7 +642,7 @@ const HomePage = () => {
               </div>
             </div>
             <div className="col-lg-4">
-              <div className="card p-3">
+              <div className="card p-3 border-purple">
                 <div className="row">
                   <div className="col-3">
                     <FontAwesomeIcon icon={fa2} className="text-purple" style={{ fontSize: "60px" }} />
@@ -657,7 +657,7 @@ const HomePage = () => {
               </div>
             </div>
             <div className="col-lg-4">
-              <div className="card p-3">
+              <div className="card p-3 border-purple">
                 <div className="row">
                   <div className="col-3">
                     <FontAwesomeIcon icon={fa3} className="text-purple" style={{ fontSize: "60px" }} />
@@ -678,7 +678,7 @@ const HomePage = () => {
         <div id="carouselExampleAutoplaying" className="carousel slide d-lg-none" data-bs-ride="carousel">
           <div className="carousel-inner">
             <div className="carousel-item active">
-              <div className="card p-3">
+              <div className="card p-3 border-purple">
                 <div className="row">
                   <div className="col-3">
                     <FontAwesomeIcon icon={fa1} className="text-purple" style={{ fontSize: "60px" }} />
@@ -694,7 +694,7 @@ const HomePage = () => {
             </div>
 
             <div className="carousel-item">
-              <div className="card p-3">
+              <div className="card p-3 border-purple">
                 <div className="row">
                   <div className="col-3">
                     <FontAwesomeIcon icon={fa2} className="text-purple" style={{ fontSize: "60px" }} />
@@ -710,7 +710,7 @@ const HomePage = () => {
             </div>
 
             <div className="carousel-item">
-              <div className="card p-3">
+              <div className="card p-3 border-purple">
                 <div className="row">
                   <div className="col-3">
                     <FontAwesomeIcon icon={fa3} className="text-purple" style={{ fontSize: "60px" }} />
@@ -784,7 +784,7 @@ const HomePage = () => {
         
         <div className="d-flex overflow-x-auto pb-2">
           <div className="col-md-3 col-sm-4 col-7 px-2">
-            <div className="card p-1 h-100">
+            <div className="card p-1 h-100 border-purple">
               <div className="row align-items-center">
                 <div className="col-4">
                   <img src="https://static.vecteezy.com/system/resources/thumbnails/026/375/249/small/ai-generative-portrait-of-confident-male-doctor-in-white-coat-and-stethoscope-standing-with-arms-crossed-and-looking-at-camera-photo.jpg" alt="Doctor" className="w-100 object-fit-cover rounded-3" style={{aspectRatio: "1/1"}}/>
@@ -799,7 +799,7 @@ const HomePage = () => {
             </div>
           </div>
           <div className="col-md-3 col-sm-4 col-7 px-2">
-            <div className="card p-1 h-100">
+            <div className="card p-1 h-100 border-purple">
               <div className="row align-items-center">
                 <div className="col-4">
                   <img src="https://static.vecteezy.com/system/resources/thumbnails/026/375/249/small/ai-generative-portrait-of-confident-male-doctor-in-white-coat-and-stethoscope-standing-with-arms-crossed-and-looking-at-camera-photo.jpg" alt="Doctor" className="w-100 object-fit-cover rounded-3" style={{aspectRatio: "1/1"}}/>
@@ -814,7 +814,7 @@ const HomePage = () => {
             </div>
           </div>
           <div className="col-md-3 col-sm-4 col-7 px-2">
-            <div className="card p-1 h-100">
+            <div className="card p-1 h-100 border-purple">
               <div className="row align-items-center">
                 <div className="col-4">
                   <img src="https://static.vecteezy.com/system/resources/thumbnails/026/375/249/small/ai-generative-portrait-of-confident-male-doctor-in-white-coat-and-stethoscope-standing-with-arms-crossed-and-looking-at-camera-photo.jpg" alt="Doctor" className="w-100 object-fit-cover rounded-3" style={{aspectRatio: "1/1"}}/>
@@ -829,7 +829,7 @@ const HomePage = () => {
             </div>
           </div>
           <div className="col-md-3 col-sm-4 col-7 px-2">
-            <div className="card p-1 h-100">
+            <div className="card p-1 h-100 border-purple">
               <div className="row align-items-center">
                 <div className="col-4">
                   <img src="https://static.vecteezy.com/system/resources/thumbnails/026/375/249/small/ai-generative-portrait-of-confident-male-doctor-in-white-coat-and-stethoscope-standing-with-arms-crossed-and-looking-at-camera-photo.jpg" alt="Doctor" className="w-100 object-fit-cover rounded-3" style={{aspectRatio: "1/1"}}/>

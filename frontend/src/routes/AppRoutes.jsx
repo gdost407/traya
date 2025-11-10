@@ -10,7 +10,7 @@ import AssignmentPage from '../pages/AssignmentPage'
 import { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
-import ProfilePage from '../pages/ProfilePage'
+import MorePage from '../pages/MorePage'
 import PrivacyPolicyPage from '../pages/PrivacyPolicyPage'
 import TermsConditionPage from '../pages/TermsConditionPage'
 
@@ -33,7 +33,7 @@ function AppRoutes() {
         <Route path="/assignment" element={<AssignmentPage />} />
         <Route path="/" element={<HomePage />} />
         <Route path="/video" element={<VideoPage />} />
-        <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/more" element={<MorePage />} />
         {/* open pages */}
         <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
         <Route path="/terms-and-conditions" element={<TermsConditionPage />} />

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useLocation  } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHouse, faBoxOpen, faCircleUser } from "@fortawesome/free-solid-svg-icons";
+import { faHouse, faBoxOpen, faBorderAll } from "@fortawesome/free-solid-svg-icons";
 import { faYoutube, faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
 
 const Footer = () => {
@@ -33,9 +33,9 @@ const Footer = () => {
               </Link>
             </div>
             <div className="col p-2">
-              <Link to="/profile" className={`text-decoration-none d-flex flex-column align-items-center ${ currentPath === "/profile" ? "text-warning" : "text-light" }`}>
-                <FontAwesomeIcon icon={faCircleUser} />
-                <small>You</small>
+              <Link to="/more" className={`text-decoration-none d-flex flex-column align-items-center ${ currentPath === "/more" ? "text-warning" : "text-light" }`}>
+                <FontAwesomeIcon icon={faBorderAll} />
+                <small>More</small>
               </Link>
             </div>
           </div>

@@ -117,3 +117,11 @@
 .form-control:invalid:not(:placeholder-shown) {
   border-color: #dc3545 !important;
 }
+.accordion-button:not(.collapsed) {
+  color: #6b92cb;
+  background: linear-gradient(310deg, #80008033, #4b008233) !important;
+  box-shadow: 0 0 3px 1px indigo !important;
+}
+.accordion-button:focus {
+  box-shadow: 0 0 2px 1px purple !important;
+}
